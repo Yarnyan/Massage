@@ -1,13 +1,10 @@
 .header {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
 }
 
 .container {
     padding: 20px 0;
-    width: 1400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,24 +15,60 @@
     height: 70px;
 }
 
-.nav ul {
-    display: flex;
-    width: 340px;
+.name {
+    text-align: center;
+}
+
+.nav {
     justify-content: space-between;
+    display: flex;
+    width: 100%;
+}
+
+.name p {
+    font-family: 'JOST', sans-serif;
+    color: rgba(235, 235, 235, 1);
+    font-weight: 700;
+    font-size: 24px;
+    height: 25px;
+}
+
+.name p:nth-child(2) {
+    font-family: 'Gogol', sans-serif;   
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(195, 0, 0, 1);
+    height: 10px;
+}
+
+.info {
+    display: flex;
     align-items: center;
 }
 
-.nav ul li{
-    text-decoration: none;
-    list-style: none;
-    font-size: 20px;
-    cursor: pointer;
+.number {
+    margin-left: 72px;
 }
 
-.nav ul li a {
-    transition: .5s color;
+.number p,
+.address p {
+    font-family: 'JOST', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
 }
 
-.nav ul li a:hover {
-    color: #a0203a;
+.number,
+.address {
+    display: flex;
+    flex-direction: column;
+}
+
+.number p:nth-child(1),
+.address p:nth-child(1) {
+    color: rgba(132, 132, 132, 1);
+}
+
+.number p:nth-child(2),
+.address p:nth-child(2) {
+    color: rgba(235, 235, 235, 1);
 }

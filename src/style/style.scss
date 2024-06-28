@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 
 * {
     padding: 0;
@@ -13,8 +13,17 @@ a {
 }
 
 body {
-    font-family: "PT Sans", sans-serif;
     min-height: 100vh;
-    background-color: #0f0f0f;
+    background-color: rgba(27, 27, 27, 1);
     color: #fff;
+}
+
+@font-face {
+    font-family: 'Gogol';
+    src: url('src/assets/font/Gogol Regular/Gogol Regular.ttf') format('truetype');
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
