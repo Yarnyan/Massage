@@ -12,8 +12,14 @@ a {
     color: #fff;
 }
 
+button,
+input,
+select {
+    outline: none;
+    border: none;
+}
+
 body {
-    min-height: 100vh;
     background-color: rgba(27, 27, 27, 1);
     color: #fff;
 }
@@ -26,4 +32,21 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.swiper-pagination {
+    top: 270px !important; 
+    left: 340px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.swiper-pagination-bullet {
+    margin-top: 10px !important;
+    background-color: #EBEBEB99 !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #C3000099 !important;
 }

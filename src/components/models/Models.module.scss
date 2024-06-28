@@ -1,0 +1,174 @@
+.models {
+    width: 100%;
+    border-top: 1px solid #393939;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 150px 0 50px 0;
+}
+
+.modelsSubtile {
+    color: #C30000;
+    font-family: 'Jost', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.selection {
+    margin-top: 20px;
+}
+
+.selection p {
+    font-family: 'Jost', sans-serif;
+}
+
+.selection p:nth-child(1) {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    color: #EBEBEB;
+}
+
+.selection p:nth-child(2) {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #EBEBEB;
+    margin-top: 15px;
+    width: 790px;
+}
+
+.buttons {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    background-color: #EBEBEB !important;
+    color: #C30000 !important;
+}
+
+.buttons button {
+    margin: 0 12.5px;
+    width: 180px;
+    height: 52px;
+    border: 1px solid #C30000;
+    background-color: transparent;
+    color: #EBEBEB;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .5s color, .7s background-color;
+}
+
+.buttons button:hover {
+    background-color: #EBEBEB;
+    color: #C30000;
+}
+
+.aboutMe {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+.data,
+.tariffs {
+    width: 486px;
+    height: 161px;
+    background-color: #D9D9D91A;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+.tariffs {
+    margin-left: 24px;
+}
+
+.data p,
+.tariffs p {
+    color: #EBEBEB;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.table {
+    display: flex;
+    margin-top: 15px;
+}
+
+.pillar2 p,
+.pillar1 p {
+    color: #848484;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+}
+
+.pillar2 span,
+.pillar1 span {
+    color: #EBEBEB;
+    font-weight: 500;
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+}
+
+.pillar2 {
+    margin-left: 62px;
+}
+
+.conditions {
+    margin-top: 20px;
+}
+
+.conditions p:nth-child(1) {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #EBEBEB;
+}
+
+.conditions span {
+    font-family: 'Jost', sans-serif;
+    color: gray;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.conditions p:nth-child(2) {
+    font-family: 'Jost', sans-serif;
+    color: #EBEBEB;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.aboutInfo {
+    margin-top: 16px;
+}
+
+.aboutInfo p:nth-child(1) {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #EBEBEB;
+}
+
+.aboutInfo p:nth-child(2) {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #EBEBEB;
+    margin-top: 4px;
+    line-height: 26px;
+}
