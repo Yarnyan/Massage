@@ -215,5 +215,10 @@
     .data,
     .tariffs {
         width: 100%;
+        height: auto;
+    }
+    .buttons button{
+        margin: 0 7px;
+        font-size: 16px;
     }
 }
