@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import styles from './Models.module.scss'
 import { models } from './data/data'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 export default function Models() {
     const [selectedModel, setSelectedModel] = useState(null);
     const [activeModel, setActiveModel] = useState(null);
@@ -75,6 +79,53 @@ export default function Models() {
                         </div>
                     </div>
                 )}
+                <div className={styles.slider}>
+                    <Swiper
+                        modules={[Autoplay]}
+                        // autoplay={{
+                        //     delay: 2500,
+                        //     disableOnInteraction: false,
+                        // }}
+                        spaceBetween={50}
+                        slidesPerView="auto"
+                    >
+                        <SwiperSlide className={styles.swiperSlide}>
+                            <div className={styles.imgContainer}>
+                                <img src='/image/imageSlider_1.png' alt="" />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className={styles.swiperSlide}>
+                            <div className={styles.imgContainer}>
+                                <img src='/image/imageSlider_2.png' alt="" />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className={styles.swiperSlide}>
+                            <div className={styles.imgContainer}>
+                                <img src='/image/imageSlider_3.png' alt="" />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className={styles.swiperSlide}>
+                            <div className={styles.imgContainer}>
+                                <img src='/image/imageSlider_4.png' alt="" />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className={styles.swiperSlide}>
+                            <div className={styles.imgContainer}>
+                                <img src='/image/imageSlider_4.png' alt="" />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className={styles.swiperSlide}>
+                            <div className={styles.imgContainer}>
+                                <img src='/image/imageSlider_4.png' alt="" />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className={styles.swiperSlide}>
+                            <div className={styles.imgContainer}>
+                                <img src='/image/imageSlider_4.png' alt="" />
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
                 {selectedModel && selectedModel.conditions !== null && (
                     <div className={styles.conditions}>
                         <p>Мои условия</p>

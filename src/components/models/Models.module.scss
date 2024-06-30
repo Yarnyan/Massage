@@ -172,3 +172,48 @@
     margin-top: 4px;
     line-height: 26px;
 }
+
+.swiperSlide {
+    max-width: 290px;
+    // margin-right: 10px !important;
+}
+
+.swiperSlide img {
+    width: 290px;
+}
+
+.slider {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 1220px) {
+    .models {
+        padding: 0 10px;
+    }
+
+    .pillar2 {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 772px) {
+    .selection p:nth-child(2) {
+        width: 100%;
+    }
+
+    .aboutMe {
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .tariffs {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+
+    .data,
+    .tariffs {
+        width: 100%;
+    }
+}

@@ -30,7 +30,6 @@
     font-size: 18px;
     font-weight: 300;
     color: gray;
-    width: 1050px;
     margin-top: 50px;
 }
 
@@ -50,4 +49,16 @@
     font-size: 18px;
     font-weight: 400;
     color: #FFFFFF;
+}
+
+@media screen and (max-width: 1220px) {
+    .advantages {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 772px) {
+    .cards {
+        justify-content: center;
+    }
 }

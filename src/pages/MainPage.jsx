@@ -5,7 +5,7 @@ import Advantages from '../components/advantages/Advantages'
 export default function MainPage() {
   return (
     <div> 
-        <Header />
+        {/* <Header /> */}
         <Models />
         <Advantages />
     </div>
