@@ -1,0 +1,137 @@
+.liaison {
+    width: 100%;
+    border-top: 1px solid #393939;
+}
+
+.container {
+    background-color: rgba(37, 37, 37, 1);
+    height: 560px;
+    margin: 150px 0 50px 0;
+}
+
+.bodyLiaison {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    padding: 50px 0 75px 0;
+}
+
+.title p:nth-child(1) {
+    color: rgba(195, 0, 0, 1);
+    font-weight: 700;
+    font-size: 36px;
+    font-family: 'Jost', sans-serif;
+}
+
+.title p:nth-child(2) {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Jost', sans-serif;
+    line-height: 29px;
+    margin-top: 16px;
+    max-width: 472px;
+}
+
+.form {
+    margin-left: 242px;
+}
+
+.inputField input {
+    padding: 17px 5px 17px 5px;
+    border: 1px solid rgba(235, 235, 235, 1);
+    border-radius: 4px;
+    background-color: transparent;
+    width: 380px;
+    height: 60px;
+    margin-top: 4px;
+    color: rgba(132, 132, 132, 1);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.inputField p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(235, 235, 235, 1);
+}
+
+.input {
+    width: 380px;
+    height: 60px;
+    margin-top: 4px;
+    padding: 17px 5px 17px 5px;
+    background-color: aliceblue;
+    color: rgba(195, 0, 0, 1) !important;
+    font-size: 18px !important;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+}
+
+.input svg {
+    color: rgba(195, 0, 0, 1) !important;
+}
+
+.input fieldset {
+    border: none !important;
+}
+
+
+.checkField {
+    margin-top: 20px;
+}
+
+.gg {
+    display: flex;
+    align-items: center;
+}
+
+.checkField input {
+    padding: 0 !important;
+}
+
+.checkField span {
+    color: rgba(195, 0, 0, 1) !important;
+    padding: 0 !important;
+}
+
+
+.checkField p {
+    color: rgba(132, 132, 132, 1);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Jost', sans-serif;
+}
+
+.buttonField {
+    margin-top: 14px;
+}
+
+.buttonField button {
+    background-color: rgba(195, 0, 0, 1);
+    padding: 10px 39px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    color: rgba(235, 235, 235, 1);
+    transition: .7s background-color;
+    cursor: pointer;
+}
+
+.buttonField button:hover {
+    background-color: darken(#9B0000, 10%)
+}
+
+.checkField .error {
+    margin-top: 4px !important;
+}
+
+.error {
+    color: red !important;
+    margin-top: -12px !important;
+}
