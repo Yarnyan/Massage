@@ -27,14 +27,14 @@
     flex-direction: column;
 }
 
-.warningContainer h1{
+.warningContainer h1 {
     font-family: 'Jost', sans-serif;
     font-size: 96px;
     font-weight: 600;
     color: rgba(235, 235, 235, 1);
 }
 
-.warningContainer p{
+.warningContainer p {
     font-family: 'Jost', sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -84,4 +84,24 @@
 .gg span {
     color: rgba(195, 0, 0, 1) !important;
     padding: 0 !important;
+}
+
+
+@media screen and (max-width: 500px) {
+    .warningContainer p {
+        text-align: center;
+        font-size: 20px;
+    }
+    .checkBox  {
+        max-width: 288px;    
+    }
+    .checkBox p {
+        font-size: 14px;  
+    }
+    .checkBox span {
+        font-size: 14px;  
+    }
+    .warningContainer button {
+        margin-top: 40px;
+    }
 }

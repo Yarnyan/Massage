@@ -10,7 +10,7 @@ import Faq from '../components/faq/Faq'
 export default function MainPage() {
   return (
     <div> 
-        {/* <Header /> */}
+        <Header />
         <Models />
         <Advantages />
         <Liaison />

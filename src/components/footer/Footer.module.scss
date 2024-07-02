@@ -124,11 +124,17 @@
 
     .info {
         margin-top: 12px;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .link a,
     .link p,
     .footerText p {
         text-align: center;
+    }
+    .number {
+        margin-left: 0;
     }
 }

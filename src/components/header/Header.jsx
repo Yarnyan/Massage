@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Header.module.scss'
 import Warning from '../modal/Warning/Warning'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,18 +7,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 export default function Header() {
     const [token, setToken] = useState(localStorage.getItem('isAdult'));
-    console.log(token)
+    const width = window.innerWidth
     useEffect(() => {
         if (!token) {
-          document.body.classList.add('no-scroll');
+            document.body.classList.add('no-scroll');
         } else {
-          document.body.classList.remove('no-scroll');
+            document.body.classList.remove('no-scroll');
         }
-      }, [token]);
-      const handleAccept = () => {
+    }, [token]);
+    const handleAccept = () => {
         localStorage.setItem('isAdult', 'true');
         setToken('true');
-      };
+    };
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -30,12 +30,28 @@ export default function Header() {
                     </div>
                     <div className={styles.info}>
                         <div className={styles.address}>
-                            <p>г. Москва</p>
-                            <p>ул. Первая д.90</p>
+                            {width < 600 ? (
+                                <a href="#footer">
+                                    <img src="/image/Location.svg" alt="" />
+                                </a>
+                            ) : (
+                                <>
+                                    <p>г. Москва</p>
+                                    <p>ул. Первая д.90</p>
+                                </>
+                            )}
                         </div>
                         <div className={styles.number}>
-                            <p>Запись по телефону</p>
-                            <p>+ 7 900 858 69 57</p>
+                            {width < 600 ? (
+                                <a href="#footer">
+                                    <img src="/image/Phone.svg" alt="" />
+                                </a>
+                            ) : (
+                                <>
+                                    <p>Запись по телефону</p>
+                                    <p>+ 7 900 858 69 57</p>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -46,10 +62,10 @@ export default function Header() {
                             clickable: true,
                         }}
                         loop={true}
-                        // autoplay={{
-                        //     delay: 2500,
-                        //     disableOnInteraction: false,
-                        // }}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
                         spaceBetween={50}
                         slidesPerView={1}
                     >
@@ -88,9 +104,9 @@ export default function Header() {
                     <a href="#liaison">Запись</a>
                 </div>
                 <div className={styles.record}>
-                    <button>
+                    <a href="#liaison">
                         Записаться
-                    </button>
+                    </a>
                 </div>
             </div>
             {!token ? <Warning onAccept={handleAccept} /> : ''}

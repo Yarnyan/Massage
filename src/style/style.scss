@@ -76,3 +76,12 @@ body {
     margin-top: 70px !important;
     color: rgba(195, 0, 0, 1) !important;
 }
+
+@media screen and (max-width: 600px) {
+    .swiper-pagination {
+        top: 270px !important;
+        left: 25px !important;
+        display: flex;
+        flex-direction: column;
+    }
+}

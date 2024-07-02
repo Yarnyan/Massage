@@ -95,3 +95,27 @@
     font-size: 18px;
     margin-top: 0px !important;
 }
+
+@media screen and (max-width: 380px) {
+    .about {
+        top: 290px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .about {
+        top: 270px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .about {
+        top: 250px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .about {
+        top: 230px;
+    }
+}
