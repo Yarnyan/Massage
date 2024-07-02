@@ -1,12 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './Header.module.scss'
+import Warning from '../modal/Warning/Warning'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 export default function Header() {
-
+    const [token, setToken] = useState(localStorage.getItem('isAdult'));
+    console.log(token)
+    useEffect(() => {
+        if (!token) {
+          document.body.classList.add('no-scroll');
+        } else {
+          document.body.classList.remove('no-scroll');
+        }
+      }, [token]);
+      const handleAccept = () => {
+        localStorage.setItem('isAdult', 'true');
+        setToken('true');
+      };
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -70,10 +82,10 @@ export default function Header() {
             </div>
             <div className={styles.buttons}>
                 <div className={styles.links}>
-                    <a href="">Модели</a>
-                    <a href="">О нас</a>
-                    <a href="">Услуги</a>
-                    <a href="">Запись</a>
+                    <a href="#models">Модели</a>
+                    <a href="#advantages">Сок💦</a>
+                    <a href="#programs">Программы</a>
+                    <a href="#liaison">Запись</a>
                 </div>
                 <div className={styles.record}>
                     <button>
@@ -81,6 +93,7 @@ export default function Header() {
                     </button>
                 </div>
             </div>
+            {!token ? <Warning onAccept={handleAccept} /> : ''}
         </header>
     )
 }

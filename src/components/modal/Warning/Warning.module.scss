@@ -1,0 +1,87 @@
+.warning {
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.warningBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(30px);
+    background-color: rgba(36, 36, 36, 0.7);
+}
+
+.warningContainer {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.warningContainer h1{
+    font-family: 'Jost', sans-serif;
+    font-size: 96px;
+    font-weight: 600;
+    color: rgba(235, 235, 235, 1);
+}
+
+.warningContainer p{
+    font-family: 'Jost', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(235, 235, 235, 1);
+    margin-top: 2px;
+}
+
+.checkBox {
+    max-width: 460px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkBox p {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(132, 132, 132, 1);
+    margin-left: 6px;
+}
+
+.checkBox span {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(235, 235, 235, 1);
+}
+
+.warningContainer button {
+    background-color: rgba(195, 0, 0, 1);
+    color: rgba(235, 235, 235, 1);
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    padding: 10px 39px;
+    font-weight: 500;
+    border-radius: 30px;
+    margin-top: 50px;
+    transition: .7s background-color;
+    cursor: pointer;
+}
+
+.warningContainer button:hover {
+    background-color: darken(#9B0000, 10%)
+}
+
+.gg span {
+    color: rgba(195, 0, 0, 1) !important;
+    padding: 0 !important;
+}

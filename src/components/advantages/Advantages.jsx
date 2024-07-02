@@ -4,7 +4,7 @@ import { advantageData } from './data/data'
 import Card from './Card'
 export default function Advantages() {
   return (
-    <div className={styles.advantages}>
+    <div className={styles.advantages} id="advantages">
         <div className={styles.container}>
             <p className={styles.advantagesSubtile}>Почему вам у нас понравится?</p>
             <div className={styles.cards}>

@@ -1,0 +1,100 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 997px;
+  height: 763px;
+  z-index: 2;
+  padding: 120px 103px 0 103px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('/image/entryModal.png');
+}
+
+.modalContent h1 {
+  color: rgba(173, 0, 10, 1);
+  font-weight: 700;
+  font-size: 64px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+.modalContent p {
+  margin-top: 60px;
+  color: rgba(235, 235, 235, 1);
+  font-weight: 400;
+  font-family: 'Jost', sans-serif;
+  font-size: 24px;
+}
+
+.modalContent span {
+  color: rgba(173, 0, 10, 1);
+}
+
+.modalContent button {
+  background-color: rgba(235, 235, 235, 1);
+  color: rgba(173, 0, 10, 1);
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 30px;
+  padding: 14px 39px;
+  margin-top: 60px;
+  transition: .7s all;
+  cursor: pointer;
+  max-width: 276px;
+  width: 100%;
+}
+
+.modalContent button:hover {
+  background-color: rgba(173, 0, 10, 1);
+  color: rgba(235, 235, 235, 1)
+}
+
+@media screen and (max-width: 806px) {
+  .modalContent {
+    margin: 0 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modalContent {
+    width: 90%;
+    height: 400px;
+    padding: 68px 39px 0 39px;
+  }
+  .modalContent h1 {
+    font-size: 30px;
+  }
+  
+  .modalContent p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .modalContent button {   
+    margin-top: 27px;
+  }
+}

@@ -1,0 +1,49 @@
+.testimonial {
+    background-color: lighten(rgba(27, 27, 27, 1), 5%);
+    max-width: 282px;
+    height: auto;
+    padding: 16px;
+    border-radius: 30px;
+}
+
+.testimonialHeader {
+    display: flex;
+    align-items: center;
+}
+
+.testimonialHeader p {
+    margin-top: 0px !important;
+    color: rgba(195, 0, 0, 1) !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    font-family: 'Jost', sans-serif !important;
+    margin-left: 6px;
+}
+
+.avatar {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.testimonialMaster {
+    margin-top: 4px;
+}
+
+.testimonialMaster p {
+    color: rgba(132, 132, 132, 1) !important;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    font-family: 'Jost', sans-serif !important;
+}
+
+.testimonialText {
+    margin-top: 8px;
+}
+
+.testimonialText p{
+    color: rgba(235, 235, 235, 1);
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    line-height: 23px;
+}

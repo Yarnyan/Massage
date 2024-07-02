@@ -21,7 +21,7 @@ export default function Models() {
     };
 
     return (
-        <div className={styles.models}>
+        <div className={styles.models} id="models">
             <div className={styles.container}>
                 <p className={styles.modelsSubtile}>Модели</p>
                 <div className={styles.selection}>

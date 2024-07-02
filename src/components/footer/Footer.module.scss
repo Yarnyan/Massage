@@ -1,0 +1,134 @@
+.footer {
+    width: 100%;
+    background-color: rgba(37, 37, 37, 1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 55px 0 8px 0;
+}
+
+.footerHeader {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+}
+
+.name {
+    text-align: center;
+}
+
+.name p {
+    font-family: 'JOST', sans-serif;
+    color: rgba(235, 235, 235, 1);
+    font-weight: 700;
+    font-size: 24px;
+    height: 25px;
+}
+
+.name p:nth-child(2) {
+    font-family: 'Gogol', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(195, 0, 0, 1);
+    height: 10px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.number {
+    margin-left: 72px;
+}
+
+.number p,
+.address p {
+    font-family: 'JOST', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.number,
+.address {
+    display: flex;
+    flex-direction: column;
+}
+
+.number p:nth-child(1),
+.address p:nth-child(1) {
+    color: rgba(132, 132, 132, 1);
+}
+
+.number p:nth-child(2),
+.address p:nth-child(2) {
+    color: rgba(235, 235, 235, 1);
+}
+
+.footerLink {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+}
+
+.link a {
+    margin-left: 14px;
+}
+
+.footerBody {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerBody p {
+    max-width: 747px;
+    font-family: 'JOST', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(132, 132, 132, 1);
+}
+
+.link a,
+.link p,
+.footerText p {
+    font-family: 'JOST', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(132, 132, 132, 1);
+}
+
+@media screen and (max-width: 1220px) {
+    .footer {
+        padding: 0 10px;
+    }
+
+    .footerLink {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .footerHeader {
+        flex-wrap: wrap;
+    }
+
+    .info {
+        margin-top: 12px;
+    }
+
+    .link a,
+    .link p,
+    .footerText p {
+        text-align: center;
+    }
+}

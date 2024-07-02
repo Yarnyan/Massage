@@ -90,7 +90,8 @@
     position: relative;
     align-items: end;
     height: 100%;
-    margin-left: 340px;
+    justify-content: center;
+    // margin-left: 340px;
 }
 
 .imgContainer img {
@@ -147,7 +148,7 @@
 }
 
 .links a {
-    margin: 0 15px;
+    margin: 0 14px;
     font-size: 20px;
     font-weight: 400;
     font-family: 'Jost', sans-serif;

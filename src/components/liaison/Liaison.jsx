@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './Liaison.module.scss'
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
+import Entry from '../modal/Entry/Entry';
 import { MenuItem } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -16,19 +16,34 @@ const schema = yup.object().shape({
 });
 
 export default function Liaison() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        setIsModalOpen(true)
+        console.log(data)
+    };
+
+    useEffect(() => {
+        if (isModalOpen) {
+          document.body.classList.add('no-scroll');
+        } else {
+          document.body.classList.remove('no-scroll');
+        }
+      }, [isModalOpen]);
 
     return (
-        <div className={styles.liaison}>
+        <div className={styles.liaison} id='liaison'>
             <div className={styles.container}>
                 <div className={styles.bodyLiaison}>
                     <div className={styles.title}>
                         <p>Запишись прямо сейчас!</p>
                         <p>Мы свяжемся с тобой в течение 29 секунд и закажем до нас такси бесплатно.</p>
+                        <div>
+                            <img src="/image/reg.png" alt="" />
+                        </div>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                         <div className={styles.inputField}>
@@ -82,11 +97,12 @@ export default function Liaison() {
                             </div>
                         </div>
                         <div className={styles.buttonField}>
-                            <button type="submit">Отправить</button>
+                            <button type='submit'>Отправить</button>
                         </div>
                     </form>
                 </div>
             </div>
+            {isModalOpen && <Entry closeModal={() => setIsModalOpen(false)} />}
         </div>
     )
 }
