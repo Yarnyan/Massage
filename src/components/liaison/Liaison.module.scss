@@ -177,13 +177,25 @@
 }
 
 @media screen and (max-width: 450px) {
+    .container {
+        margin: 75px 0 50px 0;
+    }
+    .form {
+        margin-left: 0;
+    }
+    .inputField {
+        width: 100%
+    }
     .inputField input{
-        width: 250px;
+        width: 100%;
     }
     .input {
-        width: 250px;
+        width: 100%;
     }
     .checkField p {
         margin-left: 6px;
+    }
+    .title img {
+        height: 100%;
     }
 }

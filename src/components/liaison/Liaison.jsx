@@ -35,7 +35,7 @@ export default function Liaison() {
       }, [isModalOpen]);
 
     return (
-        <div className={styles.liaison} id='liaison'>
+        <div className={styles.liaison}>
             <div className={styles.container}>
                 <div className={styles.bodyLiaison}>
                     <div className={styles.title}>
@@ -45,7 +45,7 @@ export default function Liaison() {
                             <img src="/image/reg.png" alt="" />
                         </div>
                     </div>
-                    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+                    <form onSubmit={handleSubmit(onSubmit)} className={styles.form} id='liaison'>
                         <div className={styles.inputField}>
                             <p>Имя</p>
                             <Controller

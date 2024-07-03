@@ -13,6 +13,9 @@ export default function Testimonials() {
                 <p className={styles.testimonialsSubtitle}>Отзывы</p>
                 <p>Впечатления гостей о посещении студии.</p>
                 <p>Поделись опытом с новичками и замечаниями о работе студии с администратором студии.</p>
+                <div className={styles.create}>
+                    <button>Оставить отзыв</button>
+                </div>
                 <div className={styles.testimonialsContainer}>
                     <Swiper
                         modules={[Navigation, Autoplay]}

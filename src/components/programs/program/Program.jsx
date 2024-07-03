@@ -1,16 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './Program.module.scss'
-export default function Program() {
+import { useDispatch, useSelector } from 'react-redux'
+import { addProgram } from '../../../store/slice/program'
+export default function Program({image, description, time, price, type, openModal}) {
+    const program = useSelector((state) => state.program.programs)
+    const [showModal, setShowModal] = useState(false)
+    const dispatch = useDispatch()
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const program = {
+          image: image,
+          description: description,
+          time: time,
+          price: price,
+          type: type,
+        }
+        dispatch(addProgram(program))
+        openModal()
+      }
+    console.log(program)
+
     return (
         <div className={styles.program}>
-            <img src="/image/programImage.png" alt="" />
+            <img src={image} alt="" />
             <div className={styles.about}>
                 <div className={styles.programName}>
                     <p>
                         Программа
                     </p>
                     <p>
-                        Эстет
+                        {type}
                     </p>
                 </div>
                 <div className={styles.programTime}>
@@ -18,7 +37,7 @@ export default function Program() {
                         Длительность:
                     </p>
                     <p>
-                        90 мин
+                        {time} мин
                     </p>
                 </div>
                 <div className={styles.programPrice}>
@@ -26,15 +45,15 @@ export default function Program() {
                         Стоимость
                     </p>
                     <p>
-                        8 700 руб.
+                        {price} руб.
                     </p>
                 </div>
             </div>
             <div className={styles.aboutContainer}>
-                <p className={styles.aboutProgram}>Самая популярная программа в студии баланс удовольствия и релакса.</p>
+                <p className={styles.aboutProgram}>{openModal}</p>
                 <div className={styles.buttons}>
                     <a href='#liaison'>Записаться</a>
-                    <button>Подробно</button>
+                    <button onClick={handleSubmit}>Подробно</button>
                 </div>
             </div>
         </div>

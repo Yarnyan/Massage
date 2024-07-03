@@ -1,9 +1,11 @@
 import { configureStore, combineReducers,  } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { postApi } from '../api/postApi';
+import programReducer from './slice/program';
 
 const rootReducer = combineReducers({
-    [postApi.reducerPath]: postApi.reducer
+    [postApi.reducerPath]: postApi.reducer,
+    program: programReducer,
 })
 
 const store = configureStore({

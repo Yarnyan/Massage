@@ -89,41 +89,15 @@ export default function Models() {
                         spaceBetween={50}
                         slidesPerView="auto"
                     >
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/imageSlider_1.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/imageSlider_2.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/imageSlider_3.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/imageSlider_4.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/imageSlider_4.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/imageSlider_4.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/imageSlider_4.png' alt="" />
-                            </div>
-                        </SwiperSlide>
+                        {selectedModel && selectedModel.images && (
+                            selectedModel.images.map((image, index) => (
+                                <SwiperSlide key={index} className={styles.swiperSlide}>
+                                    <div className={styles.imgContainer}>
+                                        <img src={image} alt="" />
+                                    </div>
+                                </SwiperSlide>
+                            ))
+                        )}
                     </Swiper>
                 </div>
                 {selectedModel && selectedModel.conditions !== null && (

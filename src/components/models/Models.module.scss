@@ -197,6 +197,10 @@
 }
 
 @media screen and (max-width: 772px) {
+    .container {
+        margin: 75px 0 50px 0;
+        padding: 0 0 50px 0;
+    }
     .selection p:nth-child(2) {
         width: 100%;
     }

@@ -45,11 +45,42 @@
     max-width: 282px;
 }
 
-.swiper {
-    height: 300px;
+
+.create {
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    padding: 0 20px;
+    margin-top: 20px;
 }
 
+.create button {
+    background-color: rgba(173, 0, 10, 1);
+    color: rgba(235, 235, 235, 1);
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 14px 30px;
+    transition: .7s all;
+    cursor: pointer;
+    max-width: 276px;
+    width: 100%;
+  }
+  
+  .create button:hover {
+    background-color: darken(rgba(173, 0, 10, 1), 10%);
+  }
+
 @media screen and (max-width: 1220px) {
+    .create {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        margin: 75px 0 50px 0;
+        padding: 0 0 50px 0;
+    }
     .testimonials {
         padding: 0 10px;
     }

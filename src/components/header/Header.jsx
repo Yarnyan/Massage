@@ -62,10 +62,10 @@ export default function Header() {
                             clickable: true,
                         }}
                         loop={true}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
+                        // autoplay={{
+                        //     delay: 2500,
+                        //     disableOnInteraction: false,
+                        // }}
                         spaceBetween={50}
                         slidesPerView={1}
                     >
@@ -81,7 +81,7 @@ export default function Header() {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className={styles.imgContainer}>
-                                <img src='/image/backgroundImage3.png' alt="" />
+                                <img src={width < 600 ? '/image/backgroundImageMobile3.png' : '/image/backgroundImage3.png'} alt="" />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
