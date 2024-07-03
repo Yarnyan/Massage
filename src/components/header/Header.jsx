@@ -20,7 +20,7 @@ export default function Header() {
         setToken('true');
     };
     return (
-        <header className={styles.header}>
+        <header className={styles.header} id='header'>
             <div className={styles.container}>
                 <div className={styles.nav}>
                     <div className={styles.name}>

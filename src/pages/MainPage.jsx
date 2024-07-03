@@ -7,6 +7,7 @@ import Programs from '../components/programs/Programs'
 import Testimonials from '../components/Testimonials/Testimonials'
 import Footer from '../components/footer/Footer'
 import Faq from '../components/faq/Faq'
+import ScrollButton from '../components/ScrollButton/ScrollButton'
 export default function MainPage() {
   return (
     <div> 
@@ -18,6 +19,7 @@ export default function MainPage() {
         <Testimonials />
         <Faq />
         <Footer />
+        <ScrollButton />
     </div>
   )
 }
