@@ -50,7 +50,7 @@ export default function Program({image, description, time, price, type, openModa
                 </div>
             </div>
             <div className={styles.aboutContainer}>
-                <p className={styles.aboutProgram}>{openModal}</p>
+                <p className={styles.aboutProgram}>{description}</p>
                 <div className={styles.buttons}>
                     <a href='#liaison'>Записаться</a>
                     <button onClick={handleSubmit}>Подробно</button>

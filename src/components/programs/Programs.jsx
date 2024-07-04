@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './Programs.module.scss'
 import Program from './program/Program'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,7 +12,7 @@ export default function Programs() {
   const [showModal, setShowModal] = useState(false)
   const handleDetailsClick = () => {
     setShowModal(true)
-}
+  }
   const handleCloseModal = () => {
     setShowModal(false)
   }
@@ -24,6 +24,11 @@ export default function Programs() {
       document.body.classList.remove('no-scroll');
     }
   }, [showModal]);
+
+  const pagination = {
+    el: ".containerForBullets",
+    clickable: true,
+  };
   return (
     <div className={styles.program} id="programs">
       <div className={styles.container}>
@@ -33,11 +38,7 @@ export default function Programs() {
         <div className={styles.programsContainer} ref={containerRef}>
           <Swiper
             modules={[Pagination, Autoplay]}
-            // autoplay={{
-            //   delay: 2500,
-            //   disableOnInteraction: false,
-            // }}
-            // pagination={true}
+            pagination={pagination}
             spaceBetween={50}
             slidesPerView="auto"
             className={styles.swiper}
@@ -45,11 +46,12 @@ export default function Programs() {
             {programData.map((item) => {
               return (
                 <SwiperSlide className={styles.swiperSlide} key={item.id}>
-                  <Program image={item.image} description={item.description} type={item.type} time={item.time} price={item.price} openModal={handleDetailsClick}/>
+                  <Program image={item.image} description={item.description} type={item.type} time={item.time} price={item.price} openModal={handleDetailsClick} />
                 </SwiperSlide>
               )
             })}
           </Swiper>
+          <div className="containerForBullets"></div>
         </div>
       </div>
       {showModal && <ProgramModal closeModal={handleCloseModal} />}
