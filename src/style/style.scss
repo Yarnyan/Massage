@@ -29,19 +29,23 @@ body {
 
 @font-face {
     font-family: 'Gogol';
-    src: url('src/assets/font/Gogol.ttf');
+    src: url('/font/Gogol.ttf');
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 4px !important;
+    -webkit-appearance: none !important;
+    -webkit-overflow-scrolling: auto;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(195, 0, 0, 1);
-}
+    background-color: rgba(195, 0, 0, 1) !important;
+    border-radius: 2px !important;
+} 
 
 ::-webkit-scrollbar-track {
-    background-color: rgba(27, 27, 27, 1);
+    background-color: rgba(27, 27, 27, 1) !important;
+    border-radius: 2px !important;
 }
 
 .no-scroll {
