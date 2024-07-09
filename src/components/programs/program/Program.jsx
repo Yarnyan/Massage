@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import styles from './Program.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { addProgram } from '../../../store/slice/program'
+
 export default function Program({image, description, time, price, type, openModal}) {
-    const program = useSelector((state) => state.program.programs)
+    // const program = useSelector((state) => state.program.programs)
     const [showModal, setShowModal] = useState(false)
     const dispatch = useDispatch()
     const handleSubmit = (event) => {
@@ -15,10 +15,8 @@ export default function Program({image, description, time, price, type, openModa
           price: price,
           type: type,
         }
-        dispatch(addProgram(program))
         openModal()
       }
-    console.log(program)
 
     return (
         <div className={styles.program}>

@@ -1,0 +1,110 @@
+.model {
+    border-radius: 15px;
+    background-color: #282828;
+    margin: 20px 40px 20px 0;
+}
+
+.model img {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.modelInfo {
+    margin-top: 20px;
+    padding: 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modelInfo p{
+    font-family: 'Jost', sans-serif;
+}
+
+.modelInfo p:nth-child(1){
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.modelInfo p:nth-child(2){
+    font-weight: 300;
+    font-size: 18px;
+    color: lighten(#282828, 50%)
+}
+
+.modelAbout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding: 0 14px;
+}
+
+.pp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pp p{
+    font-family: 'Jost', sans-serif;
+}
+
+.pp p:nth-child(2){
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.pp p:nth-child(1){
+    font-weight: 300;
+    font-size: 18px;
+    color: lighten(#282828, 50%)
+}
+
+.buttons {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px;
+    margin-bottom: 20px;
+}
+
+.buttons a:nth-child(1) {
+    color: rgb(235, 235, 235);
+    font-family: "Jost", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.7s color;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.buttons a:nth-child(1):hover {
+    color: #680000;
+}
+
+.buttons a:nth-child(2) {
+    color: rgb(235, 235, 235);
+    font-family: "Jost", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.7s color;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 28px;
+}
+
+.buttons a:nth-child(2):hover {
+    color: #680000;
+}
+
+@media screen and (max-width: 600px) {
+    .modelsContainer {
+        justify-content: center;
+        align-items: center;
+    }
+    .model {
+        margin: 20px 0 20px 0;
+    }
+}

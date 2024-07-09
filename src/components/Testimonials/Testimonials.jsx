@@ -2,11 +2,16 @@ import React from 'react'
 import styles from './Testimonials.module.scss'
 import Testimonial from './Testimonial/Testimonial'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function Testimonials() {
+    const pagination = {
+        el: ".containerForTestimonials",
+        clickable: true,
+        enabled: true,
+      };
     return (
         <div className={styles.testimonials}>
             <div className={styles.container}>
@@ -18,13 +23,13 @@ export default function Testimonials() {
                 </div>
                 <div className={styles.testimonialsContainer}>
                     <Swiper
-                        modules={[Navigation, Autoplay]}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
+                        modules={[Pagination, Autoplay]}
+                        // autoplay={{
+                        //     delay: 2500,
+                        //     disableOnInteraction: false,
+                        // }}
                         spaceBetween={50}
-                        navigation={true}
+                        pagination={pagination}
                         slidesPerView="auto"
                         className={styles.swiper}
                         loop={true}
@@ -51,6 +56,7 @@ export default function Testimonials() {
                             <Testimonial />
                         </SwiperSlide>
                     </Swiper>
+                    <div className="containerForTestimonials"></div>
                 </div>
             </div>
         </div>

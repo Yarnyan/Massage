@@ -14,7 +14,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import RoomIcon from '@mui/icons-material/Room';
-export default function Header() {
+export default function HeaderAppointment() {
     const [token, setToken] = useState(localStorage.getItem('isAdult'));
     const width = window.innerWidth;
     const [menuOpen, setMenuOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function Header() {
     };
 
     return (
-        <header className={styles.header} id='header'>
+        <header className={styles.header} id='header' style={{height: '120px', marginTop: '0px'}}>
             <div className={styles.container}>
                 <div className={styles.nav}>
                     {(width >= 1200) && (
@@ -64,50 +64,6 @@ export default function Header() {
                             </div>
                         )}
                     </div>
-                </div>
-                <div className={styles.slider}>
-                    <Swiper
-                        modules={[Pagination, Autoplay]}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        loop={true}
-                        spaceBetween={50}
-                        slidesPerView={1}
-                    >
-                        <SwiperSlide>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/backgroundImage.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/backgroundImage2.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className={styles.imgContainer}>
-                                <img src='/image/backgroundImage4.png' alt="" />
-                            </div>
-                        </SwiperSlide>
-                    </Swiper>
-                </div>
-            </div>
-            <div className={styles.text}>
-                <p>УВИДИМСЯ <span>СЕГОДНЯ</span>?</p>
-                <p>Максимальное соприкосновение двух тел. Трепет, драйв, страсть и нежность</p>
-            </div>
-            <div className={`${styles.buttons}`}>
-                <div className={styles.links}>
-                    <a href="#models">Модели</a>
-                    <a href="#advantages">Сок💦</a>
-                    <a href="#programs">Программы</a>
-                    <a href="#liaison">Запись</a>
-                </div>
-                <div className={styles.record}>
-                    <a href="#liaison">
-                        Записаться
-                    </a>
                 </div>
             </div>
             {!token ? <Warning onAccept={handleAccept} /> : ''}

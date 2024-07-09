@@ -1,17 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import MainPage from "./pages/MainPage"
-import ErrorPage from "./pages/ErrorPage"
+import Error404 from "./pages/Error404"
+import Error403 from "./pages/Error403"
+import AppointmentPage from "./pages/AppointmentPage"
+import IsNotBanned from "./views/AuthRequired";
+
 function App() {
-
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/" element={<IsNotBanned><MainPage /></IsNotBanned>} />
+        <Route path="/vacancy" element={<IsNotBanned><AppointmentPage /></IsNotBanned>} />
+        <Route path="/403" element={<Error403 />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;

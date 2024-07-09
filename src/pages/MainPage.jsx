@@ -8,6 +8,7 @@ import Testimonials from '../components/Testimonials/Testimonials'
 import Footer from '../components/footer/Footer'
 import Faq from '../components/faq/Faq'
 import ScrollButton from '../components/ScrollButton/ScrollButton'
+import Loader from '../components/loader/Loader'
 export default function MainPage() {
   return (
     <div> 

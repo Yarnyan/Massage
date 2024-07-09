@@ -1,22 +1,20 @@
-import React, {useState, useEffect} from 'react'
-import styles from './Liaison.module.scss'
-import Select from '@mui/material/Select';
-import Checkbox from '@mui/material/Checkbox';
-import Entry from '../modal/Entry/Entry';
-import { MenuItem } from '@mui/material';
+import React from 'react'
+import styles from './Vacancy.module.scss'
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import Select from '@mui/material/Select';
+import Checkbox from '@mui/material/Checkbox';
+import { MenuItem } from '@mui/material';
 
-const schema = yup.object().shape({
-    // name: yup.string().required(),
-    phone: yup.string().required(),
-    master: yup.string().required(),
-    agree: yup.bool().oneOf([true], 'Вы должны согласиться с условиями политики конфиденциальности')
-});
 
-export default function Liaison() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Vacancy() {
+    const schema = yup.object().shape({
+        // name: yup.string().required(),
+        phone: yup.string().required(),
+        // master: yup.string().required(),
+        agree: yup.bool().oneOf([true], 'Вы должны согласиться с условиями политики конфиденциальности')
+    });
     const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
@@ -25,26 +23,14 @@ export default function Liaison() {
         setIsModalOpen(true)
         console.log(data)
     };
-
-    useEffect(() => {
-        if (isModalOpen) {
-          document.body.classList.add('no-scroll');
-        } else {
-          document.body.classList.remove('no-scroll');
-        }
-      }, [isModalOpen]);
-
     return (
-        <div className={styles.liaison}>
+        <div className={styles.Vacancy}>
             <div className={styles.container}>
-                <div className={styles.bodyLiaison}>
-                    <div className={styles.title} id='liaison'>
-                        <p>Запишись прямо сейчас!</p>
-                        <p>Мы свяжемся с тобой в течение минуты и договоримся о встрече.</p>
-                        <div>
-                            <img src="/image/reg.png" alt="" />
-                        </div>
-                    </div>
+                <p className={styles.modelsSubtile}>Оставь заявку!</p>
+                <div className={styles.selection}>
+                    <p>Оплачиваемая стажировка 5 смен. После сдачи экзамена по нашему программному обеспечению и регламенту работы в студии мы трудоустроим тебя на должность менеджера.</p>
+                </div>
+                <div className={styles.vacancyBody}>
                     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                         <div className={styles.inputField}>
                             <p>Имя</p>
@@ -66,7 +52,7 @@ export default function Liaison() {
                             />
                             <p className={styles.error}>{errors.phone && "Телефон обязателен"}</p>
                         </div>
-                        <div className={styles.inputField}>
+                        {/* <div className={styles.inputField}>
                             <p>Выбор мастера</p>
                             <Controller
                                 name="master"
@@ -81,7 +67,7 @@ export default function Liaison() {
                                 )}
                             />
                             <p className={styles.error}>{errors.master && "Выбор мастера обязателен"}</p>
-                        </div>
+                        </div> */}
                         <div className={styles.checkField}>
                             <div className={styles.gg}>
                                 <Controller
@@ -102,7 +88,6 @@ export default function Liaison() {
                     </form>
                 </div>
             </div>
-            {isModalOpen && <Entry closeModal={() => setIsModalOpen(false)} />}
         </div>
     )
 }

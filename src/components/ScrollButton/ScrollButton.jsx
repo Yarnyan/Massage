@@ -26,7 +26,7 @@ const ScrollButton = () => {
           <ArrowUpwardIcon />
         </a>
       )}
-      <Link className="fixed-button">
+      <Link to={"https://t.me/asdasdasd"} target='_blank' className="fixed-button">
         <TelegramIcon fontSize='medium'/>
       </Link>
     </div>

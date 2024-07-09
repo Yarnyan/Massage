@@ -86,14 +86,30 @@
     padding: 0 !important;
 }
 
+.error {
+    color: red !important;
+    font-family: 'Jost', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    margin-top: 12px !important;
+}
 
 @media screen and (max-width: 500px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .warningContainer p {
         text-align: center;
         font-size: 20px;
     }
+    .error {
+        max-width: 400px;
+    }
     .checkBox  {
-        max-width: 288px;    
+        max-width: 400px;    
     }
     .checkBox p {
         font-size: 14px;  
@@ -102,6 +118,6 @@
         font-size: 14px;  
     }
     .warningContainer button {
-        margin-top: 40px;
+        margin-top: 20px;
     }
 }

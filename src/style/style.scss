@@ -32,6 +32,11 @@ body {
     src: url('/font/Gogol.ttf');
 }
 
+@font-face {
+    font-family: 'Soul';
+    src: url('/font/soul.ttf');
+}
+
 ::-webkit-scrollbar {
     width: 4px;
 }
@@ -79,7 +84,14 @@ body {
     color: rgba(195, 0, 0, 1) !important;
 }
 
+.appointment-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+  }
+
 /* components/ScrollButton/ScrollButton.css */
+
 .button-container {
     position: fixed;
     bottom: 20px;
@@ -98,6 +110,11 @@ body {
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scroll-button svg {
@@ -105,9 +122,9 @@ body {
     height: 28px;
 }
 
-.scroll-button svg {
-    width: 28px;
-    height: 28px;
+.fixed-button svg {
+    width: 34px;
+    height: 34px;
 }
 
 .fixed-button {
@@ -116,10 +133,14 @@ body {
     justify-content: center;
     align-items: center;
     border: none;
-    padding: 10px;
     border-radius: 50%;
     cursor: pointer;
     margin-top: 10px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .containerForBullets {
@@ -128,6 +149,14 @@ body {
     justify-content: center;
     width: 100%;
     margin-top: 10px;
+}
+
+.containerForTestimonials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0;
 }
 
 @media screen and (max-width: 600px) {

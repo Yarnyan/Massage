@@ -6,7 +6,7 @@ export default function ProgramModal({closeModal}) {
     return (
         <div className={styles.modal}>
             <div className={styles.overlay} onClick={closeModal} />
-            <div className={styles.modalContent} style={{background: `linear-gradient(rgba(47, 47, 47, 0.78), rgba(0, 0, 0, 0.5)), url(${program.image}) no-repeat center center / 100% 100%`}}>
+            <div className={styles.modalContent} style={{background: `linear-gradient(rgb(0, 0, 0, 0.7), rgba(47, 47, 47, 0.9))`}}>
                 <p>Программа</p>
                 <p>{program.type} - это одна из самых популярных и интересных программ нашей студии длительностью целых полтора часа.</p>
                 <p>Особенность данной программы – различные техники имитаций. Массаж будет выполняться не только руками, но и при помощи шеи, груди, плечей, прикосновений губ и легких дуновений. Вы сможете активно участвовать в процессе, одаривая модель своими поцелуями, пока не наступит полное расслабление.</p>
