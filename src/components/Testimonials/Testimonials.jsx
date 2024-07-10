@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Testimonials.module.scss'
 import Testimonial from './Testimonial/Testimonial'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import TestimonialsModal from '../modal/TestimonialsModal/Testimonials';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 export default function Testimonials() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
+
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+
+        return () => {
+            document.body.classList.remove('no-scroll');
+        };
+    }, [isModalOpen]);
+
     const pagination = {
         el: ".containerForTestimonials",
         clickable: true,
@@ -19,7 +42,7 @@ export default function Testimonials() {
                 <p>Впечатления гостей о посещении студии.</p>
                 <p>Поделись опытом с новичками и замечаниями о работе студии с администратором студии.</p>
                 <div className={styles.create}>
-                    <button>Оставить отзыв</button>
+                    <button onClick={handleOpenModal}>Оставить отзыв</button>
                 </div>
                 <div className={styles.testimonialsContainer}>
                     <Swiper
@@ -59,6 +82,7 @@ export default function Testimonials() {
                     <div className="containerForTestimonials"></div>
                 </div>
             </div>
+            <TestimonialsModal isOpen={isModalOpen} onClose={handleCloseModal}/>
         </div>
     )
 }

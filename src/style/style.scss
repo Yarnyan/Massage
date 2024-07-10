@@ -87,8 +87,9 @@ body {
 .appointment-page {
     display: flex;
     flex-direction: column;
-    height: 100vh; 
-  }
+    height: 100vh;
+    overflow-x: hidden;
+}
 
 /* components/ScrollButton/ScrollButton.css */
 
@@ -164,6 +165,7 @@ body {
         top: 500px !important;
         flex-direction: row;
     }
+
     .swiper-pagination {
         top: 270px !important;
         left: 25px !important;
@@ -175,4 +177,17 @@ body {
     .swiper-button-next {
         display: none;
     }
+    .appointment-page {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-width: thin; 
+        -ms-overflow-style: none; 
+    }
+}
+
+.ReactModal__Overlay {
+    z-index: 1002 !important;
 }

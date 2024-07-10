@@ -1,0 +1,194 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 0 10px;
+}
+
+.modal {
+    background-color: rgb(37, 37, 37);
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+}
+
+.closeButton {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.inputField {
+    margin-top: 10px;
+}
+
+.inputField input {
+    padding: 17px 10px;
+    border: 1px solid rgba(195, 0, 0, 1);
+    background-color: transparent;
+    width: 380px;
+    height: 60px;
+    margin-top: 4px;
+    color: rgba(132, 132, 132, 1);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 14px;
+    border-radius: 15px;
+}
+
+.inputField p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(235, 235, 235, 1);
+}
+
+.input {
+    width: 380px;
+    height: 60px;
+    margin-top: 4px;
+    padding: 17px 5px 17px 5px;
+    background-color: rgba(195, 0, 0, 1);
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    border-radius: 15px !important;
+}
+
+.input svg {
+    color: #fff !important;
+}
+
+.input fieldset {
+    border: none !important;
+}
+
+
+.checkField {
+    margin-top: 20px;
+}
+
+.gg {
+    display: flex;
+    align-items: center;
+}
+
+.checkField input {
+    padding: 0 !important;
+}
+
+.checkField span {
+    color: rgba(195, 0, 0, 1) !important;
+    padding: 0 !important;
+}
+
+
+.checkField p {
+    color: rgba(132, 132, 132, 1);
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Jost', sans-serif;
+    margin-left: 4px;
+}
+
+.buttonField {
+    margin-top: 14px;
+}
+
+.buttonField button {
+    background-color: rgba(195, 0, 0, 1);
+    padding: 10px 39px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    color: rgba(235, 235, 235, 1);
+    transition: .7s background-color;
+    cursor: pointer;
+}
+
+.buttonField button:hover {
+    background-color: darken(#9B0000, 10%)
+}
+
+.checkField .error {
+    margin-top: 4px !important;
+}
+
+.inputField textarea {
+    padding: 17px 10px;
+    border: 1px solid rgba(195, 0, 0, 1);
+    background-color: transparent;
+    height: 120px;
+    margin-top: 4px;
+    color: rgba(132, 132, 132, 1);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 14px;
+    border-radius: 15px;
+    resize: none;
+    outline: none;
+}
+
+.inputField textarea::-webkit-scrollbar {
+    width: 0;
+    height: 0; 
+  }
+
+.inputField textarea::-webkit-resizer {
+    display: none;
+}
+
+.error {
+    color: red !important;
+    margin-top: -12px !important;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        margin: 75px 0 50px 0;
+    }
+
+    .form {
+        margin-left: 0;
+    }
+
+    .inputField {
+        width: 100%
+    }
+
+    .inputField input {
+        width: 100%;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .checkField p {
+        margin-left: 6px;
+    }
+
+    .title img {
+        height: 100%;
+    }
+}

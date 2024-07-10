@@ -14,7 +14,6 @@ export default function Warning({ onAccept }) {
   });
 
   const onSubmit = (data) => {
-    console.log('1')
     onAccept();
   };
 

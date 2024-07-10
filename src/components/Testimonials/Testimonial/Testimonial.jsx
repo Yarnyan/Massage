@@ -2,7 +2,7 @@ import React from 'react'
 import Avatar from '@mui/material/Avatar';
 import styles from './Testimonial.module.scss'
 import PersonIcon from '@mui/icons-material/Person';
-export default function testimonial() {
+export default function Testimonial() {
   return (
     <div className={styles.testimonial}>
       <div className={styles.testimonialHeader}>

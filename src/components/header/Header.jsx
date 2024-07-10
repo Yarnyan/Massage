@@ -18,18 +18,26 @@ export default function Header() {
     const [token, setToken] = useState(localStorage.getItem('isAdult'));
     const width = window.innerWidth;
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isWarningOpen, setIsWarningOpen] = useState(!token);
 
     useEffect(() => {
-        if (!token || menuOpen) {
+        if (!token || menuOpen || isWarningOpen) {
             document.body.classList.add('no-scroll');
         } else {
             document.body.classList.remove('no-scroll');
         }
-    }, [token, menuOpen]);
+    }, [token, menuOpen, isWarningOpen]);
+
+    useEffect(() => {
+        if (!token) {
+          document.body.classList.add('no-scroll');
+        }
+      }, []);
 
     const handleAccept = () => {
         localStorage.setItem('isAdult', 'true');
         setToken('true');
+        setIsWarningOpen(false);
     };
 
     const toggleMenu = () => {
@@ -110,7 +118,7 @@ export default function Header() {
                     </a>
                 </div>
             </div>
-            {!token ? <Warning onAccept={handleAccept} /> : ''}
+            {!token && isWarningOpen && <Warning onAccept={handleAccept} />}
             {menuOpen && (
                 <div className={styles.burgerMenu}>
                     <div className={styles.burgerMenuLinks}>
