@@ -1,6 +1,8 @@
 echo "Building the React application..."
 
-npm run build
+yarn
+
+yarn run build
 
 echo "Refresh data..."
 
