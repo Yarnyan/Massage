@@ -50,13 +50,9 @@ export default function Header() {
         <header className={styles.header} id='header'>
             <div className={styles.container}>
                 <div className={styles.nav}>
-
-                    <div className={styles.name}>
-                        <a href="/">
-                            <img height={70} src="/bless-1000x1000.svg" alt="bless логотип" />
-                        </a>
-                    </div>
-
+                    <a href="/">
+                        <img height={70} src="/bless-1000x1000.svg" alt="bless логотип" />
+                    </a>
                     <div className={styles.info}>
                         <div className={styles.address}>
                             <>
