@@ -7,7 +7,8 @@ export default function Footer() {
             <div className={styles.container}>
                 <div className={styles.footerHeader}>
                     <div className={styles.name}>
-                        <p>Bless</p>
+                        <img height={70} src="/bless-1000x1000svglogofooter.svg" alt="bless logo" />
+                        <p> - Элитный мужской клуб в Тюмени</p>
                     </div>
                     <div className={styles.info}>
                         <div className={styles.address}>

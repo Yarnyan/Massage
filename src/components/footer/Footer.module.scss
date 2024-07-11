@@ -18,17 +18,23 @@
 
 .name {
     text-align: center;
+    display: flex;
+    width: 100%;
+    // justify-content: space-around; 
+    align-items: center;
 }
 
 .name p {
-    font-family: 'Gogol', sans-serif;   
-    font-weight: 400;
-    font-size: 70px;
-    color: rgba(195, 0, 0, 1);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #fff;
 }
 
 .info {
     display: flex;
+    width: 100%;
+    justify-content: end;
     align-items: center;
 }
 

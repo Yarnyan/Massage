@@ -41,6 +41,32 @@
     line-height: 26px;
 }
 
+.containerBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showAllButton {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(195, 0, 0, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .7s background-color;
+}
+
+.showAllButton:hover {
+    background-color: darken(rgba(195, 0, 0, 1), 10%)
+}
+
 @media screen and (max-width: 1220px) {
     .container {
         margin: 75px 0 50px 0;

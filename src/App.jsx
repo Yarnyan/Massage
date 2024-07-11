@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<IsNotBanned><MainPage /></IsNotBanned>} />
         <Route path="/vacancy" element={<IsNotBanned><AppointmentPage /></IsNotBanned>} />
-        <Route path="/:model" element={<IsNotBanned><ModelPage /></IsNotBanned>} />
+        <Route path="/models/:model" element={<IsNotBanned><ModelPage /></IsNotBanned>} />
         <Route path="/403" element={<Error403 />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

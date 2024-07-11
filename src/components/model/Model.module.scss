@@ -1,6 +1,21 @@
 .model {
     flex: 1;
+    margin-top: 35px;
     width: 100%;
+}
+.record a {
+    border-radius: 30px;
+    padding: 10px 39px 10px 39px;
+    background-color: #C30000;
+    cursor: pointer;
+    transition: .7s background-color;
+    font-family: 'jost', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.record button:hover {
+    background-color: darken(#9B0000, 10%)
 }
 
 .container {

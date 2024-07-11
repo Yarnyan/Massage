@@ -26,7 +26,7 @@ export default function Model() {
             </div>
             <div className={styles.buttons}>
                 <a href="">Записаться</a>
-                <Link to={'/simona'}>Подробнее</Link>
+                <Link to={'/models/simona'}>Подробнее</Link>
             </div>
         </div>
     )

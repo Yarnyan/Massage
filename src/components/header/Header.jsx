@@ -14,7 +14,9 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import RoomIcon from '@mui/icons-material/Room';
+import { Link, useNavigate } from 'react-router-dom'
 export default function Header() {
+    const navigate = useNavigate();
     const [token, setToken] = useState(localStorage.getItem('isAdult'));
     const width = window.innerWidth;
     const [menuOpen, setMenuOpen] = useState(false);
@@ -30,9 +32,9 @@ export default function Header() {
 
     useEffect(() => {
         if (!token) {
-          document.body.classList.add('no-scroll');
+            document.body.classList.add('no-scroll');
         }
-      }, []);
+    }, []);
 
     const handleAccept = () => {
         localStorage.setItem('isAdult', 'true');
@@ -48,11 +50,13 @@ export default function Header() {
         <header className={styles.header} id='header'>
             <div className={styles.container}>
                 <div className={styles.nav}>
-                    {(width >= 1200) && (
-                        <div className={styles.name}>
-                            <p>Bless</p>
-                        </div>
-                    )}
+
+                    <div className={styles.name}>
+                        <a href="/">
+                            <img height={70} src="/bless-1000x1000.svg" alt="bless логотип" />
+                        </a>
+                    </div>
+
                     <div className={styles.info}>
                         <div className={styles.address}>
                             <>
@@ -108,9 +112,9 @@ export default function Header() {
             <div className={`${styles.buttons}`}>
                 <div className={styles.links}>
                     <a href="#models">Модели</a>
-                    <a href="#advantages">Сок💦</a>
+                    <a href="#advantages">О нас</a>
                     <a href="#programs">Программы</a>
-                    <a href="#liaison">Запись</a>
+                    {/* <a href="#liaison">Запись</a> */}
                 </div>
                 <div className={styles.record}>
                     <a href="#liaison">
@@ -123,49 +127,59 @@ export default function Header() {
                 <div className={styles.burgerMenu}>
                     <div className={styles.burgerMenuLinks}>
                         <div className={styles.burgerMenuLink}>
-                            <div className={styles.LinkIcon}>
-                                <GroupIcon />
-                            </div>
-                            <div className={styles.LinkText}>
-                                <p>Модели</p>
-                                <p>Мастер эротического массажа</p>
-                            </div>
+                            <a href="#models" className={styles.navLink} onClick={toggleMenu}>
+                                <div className={styles.LinkIcon}>
+                                    <GroupIcon />
+                                </div>
+                                <div className={styles.LinkText}>
+                                    <p>Модели</p>
+                                    <p>Мастер эротического массажа</p>
+                                </div>
+                            </a>
                         </div>
                         <div className={styles.burgerMenuLink}>
-                            <div className={styles.LinkIcon}>
-                                <FavoriteIcon />
-                            </div>
-                            <div className={styles.LinkText}>
-                                <p>Сок💦</p>
-                                <p>Мастер эротического массажа</p>
-                            </div>
+                            <a className={styles.navLink} onClick={toggleMenu} href="#advantages">
+                                <div className={styles.LinkIcon}>
+                                    <FavoriteIcon />
+                                </div>
+                                <div className={styles.LinkText}>
+                                    <p>Сок💦</p>
+                                    <p>Мастер эротического массажа</p>
+                                </div>
+                            </a>
                         </div>
                         <div className={styles.burgerMenuLink}>
-                            <div className={styles.LinkIcon}>
-                                <MenuBookIcon />
-                            </div>
-                            <div className={styles.LinkText}>
-                                <p>Программы</p>
-                                <p>Программы эротического массажа</p>
-                            </div>
+                            <a className={styles.navLink} onClick={toggleMenu} href="#programs">
+                                <div className={styles.LinkIcon}>
+                                    <MenuBookIcon />
+                                </div>
+                                <div className={styles.LinkText}>
+                                    <p>Программы</p>
+                                    <p>Программы эротического массажа</p>
+                                </div>
+                            </a>
                         </div>
                         <div className={styles.burgerMenuLink}>
-                            <div className={styles.LinkIcon}>
-                                <CreateIcon />
-                            </div>
-                            <div className={styles.LinkText}>
-                                <p>Запись</p>
-                                <p>Мастер эротического массажа</p>
-                            </div>
+                            <a className={styles.navLink} onClick={toggleMenu} href="#liaison">
+                                <div className={styles.LinkIcon}>
+                                    <CreateIcon />
+                                </div>
+                                <div className={styles.LinkText}>
+                                    <p>Запись</p>
+                                    <p>Мастер эротического массажа</p>
+                                </div>
+                            </a>
                         </div>
                         <div className={styles.burgerMenuLink}>
-                            <div className={styles.LinkIcon}>
-                                <AttachMoneyIcon />
-                            </div>
-                            <div className={styles.LinkText}>
-                                <p>Вакансии</p>
-                                <p>Мастер эротического массажа</p>
-                            </div>
+                            <Link to={'/vacancy'} className={styles.navLink}>
+                                <div className={styles.LinkIcon}>
+                                    <AttachMoneyIcon />
+                                </div>
+                                <div className={styles.LinkText}>
+                                    <p>Вакансии</p>
+                                    <p>Мастер эротического массажа</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.burgerMenuInfo}>
