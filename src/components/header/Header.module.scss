@@ -47,8 +47,8 @@
     justify-content: space-between;
     display: flex;
     width: 100%;
-    z-index: 10;
     padding: 0 24px;
+    position: relative;
     z-index: 1002;
 }
 
@@ -257,7 +257,7 @@
     }
     .nav {
 
-        padding: 0 12px;
+        padding: 10px 12px 0 12px;
     }
     .container {
         padding: 10px 0;
@@ -279,7 +279,7 @@
     }
 
     .text {
-        margin-top: 375px;
+        margin-top: 365px;
         width: 100%;
         display: flex;
         flex-direction: column;

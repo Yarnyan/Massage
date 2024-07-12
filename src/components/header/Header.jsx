@@ -48,8 +48,32 @@ export default function Header() {
 
     return (
         <header className={styles.header} id='header'>
+            <div className={styles.nav}>
+                <a href="/">
+                    <img height={70} src="/bless-1000x1000.svg" alt="bless логотип" />
+                </a>
+                <div className={styles.info}>
+                    <div className={styles.address}>
+                        <>
+                            <p>г. Тюмень</p>
+                            <p>ул. 30 лет победы</p>
+                        </>
+                    </div>
+                    <div className={styles.number}>
+                        <>
+                            <p>Запись по телефону</p>
+                            <p>+ 7 900 900 90 90</p>
+                        </>
+                    </div>
+                    {width < 1200 && (
+                        <div className={styles.menuIcon} onClick={toggleMenu}>
+                            {menuOpen ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
+                        </div>
+                    )}
+                </div>
+            </div>
             <div className={styles.container}>
-                <div className={styles.nav}>
+                {/* <div className={styles.nav}>
                     <a href="/">
                         <img height={70} src="/bless-1000x1000.svg" alt="bless логотип" />
                     </a>
@@ -72,7 +96,7 @@ export default function Header() {
                             </div>
                         )}
                     </div>
-                </div>
+                </div> */}
                 <div className={styles.slider}>
                     <Swiper
                         modules={[Pagination, Autoplay]}

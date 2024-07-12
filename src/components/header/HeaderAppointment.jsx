@@ -14,7 +14,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import RoomIcon from '@mui/icons-material/Room';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 export default function HeaderAppointment() {
     const [token, setToken] = useState(localStorage.getItem('isAdult'));
     const width = window.innerWidth;
@@ -38,9 +38,35 @@ export default function HeaderAppointment() {
     };
 
     return (
-        <header className={styles.header} id='header' style={{height: '120px', marginTop: '0px'}}>
+        <header className={styles.header} id='header' style={{ height: '120px', marginTop: '0px' }}>
+            <div className={styles.nav}>
+                <div className={styles.name}>
+                    <a href="/">
+                        <img src="/bless-1000x1000.svg" alt="bless логотип" />
+                    </a>
+                </div>
+                <div className={styles.info}>
+                    <div className={styles.address}>
+                        <>
+                            <p>г. Тюмень</p>
+                            <p>ул. 30 лет победы</p>
+                        </>
+                    </div>
+                    <div className={styles.number}>
+                        <>
+                            <p>Запись по телефону</p>
+                            <p>+ 7 900 900 90 90</p>
+                        </>
+                    </div>
+                    {width < 1200 && (
+                        <div className={styles.menuIcon} onClick={toggleMenu}>
+                            {menuOpen ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
+                        </div>
+                    )}
+                </div>
+            </div>
             <div className={styles.container}>
-                <div className={styles.nav}>
+                {/* <div className={styles.nav}>
                         <div className={styles.name}>
                         <a href="/">
                             <img src="/bless-1000x1000.svg" alt="bless логотип" />
@@ -65,13 +91,13 @@ export default function HeaderAppointment() {
                             </div>
                         )}
                     </div>
-                </div>
+                </div> */}
             </div>
             {!token ? <Warning onAccept={handleAccept} /> : ''}
             {menuOpen && (
                 <div className={styles.burgerMenu}>
                     <div className={styles.burgerMenuLinks}>
-                    <div className={styles.burgerMenuLink}>
+                        <div className={styles.burgerMenuLink}>
                             <Link to={'/'} className={styles.navLink} onClick={toggleMenu}>
                                 <div className={styles.LinkIcon}>
                                     <GroupIcon />
