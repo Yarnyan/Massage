@@ -1,12 +1,13 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ban } from '../users/users.slice';
+import { getAppState } from '../../../helpers/appState';
 
 export const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_BACKEND_URL, //import.meta.env.VITE_BACKEND_UR
+  baseUrl: import.meta.env.VITE_BACKEND_URL, 
   prepareHeaders: (headers) => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      headers.set("Authorization", `Bearer ${token}`);
+    const currentUser = getAppState("current-user");
+    if (currentUser) {
+      headers.set("x-user-uuid", currentUser.slug);
     }
     return headers;
   },

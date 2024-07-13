@@ -6,9 +6,11 @@ import TestimonialsModal from '../modal/TestimonialsModal/Testimonials';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useGetReviewsQuery } from '../../store/reducers/reviews/reviews.actions';
 
 export default function Testimonials() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const {data, isSuccess} = useGetReviewsQuery();
 
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -57,27 +59,15 @@ export default function Testimonials() {
                         className={styles.swiper}
                         loop={true}
                     >
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <Testimonial />
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <Testimonial />
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <Testimonial />
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <Testimonial />
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <Testimonial />
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <Testimonial />
-                        </SwiperSlide>
-                        <SwiperSlide className={styles.swiperSlide}>
-                            <Testimonial />
-                        </SwiperSlide>
+                        {isSuccess && (
+                            <Swiper>
+                            {data.reviews.items.map(review => (
+                                <SwiperSlide key={review.review_id} className={styles.swiperSlide}>
+                                <Testimonial review={review} />
+                                </SwiperSlide>
+                            ))}
+                            </Swiper>
+                        )}
                     </Swiper>
                     <div className="containerForTestimonials"></div>
                 </div>

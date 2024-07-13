@@ -1,27 +1,31 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { useAuthorizeQuery } from '../store/reducers/users/users.actions';
-import { setAppState } from '../helpers/appState';
+import { setCurrentUser } from '../store/reducers/users/users.slice';
+
 import Loader from '../components/loader/Loader';
+import ErrorPage from '../pages/error.page';
 
 const IsNotBanned = ({ children }) => {
-  const navigate = useNavigate();
-  const {isLoading, isSuccess, data} = useAuthorizeQuery();
-  const {is_banned} = useSelector(state => state.users);
+  const dispatch = useDispatch();
+  const { isLoading, isSuccess, data } = useAuthorizeQuery();
+  const { is_banned } = useSelector(state => state.users);
+
   useEffect(() => {
-    if (is_banned) {
-      navigate("/403");
+    if (isSuccess && data) {
+      dispatch(setCurrentUser(data));
     }
-  }, [navigate, is_banned]);
+  }, [isSuccess, data, dispatch]);
 
   if (isLoading) {
-    // TODO: Сделать тут Preloader
-    return <Loader />
+    return <Loader />;
+  }
+  if (is_banned) {
+    return <ErrorPage code={403} />;
   }
   if (isSuccess) {
-    setAppState("current-user", data);
-    setAppState("is_authorised", true);
+    return <ErrorPage code={500} />;
   }
 
   return children;

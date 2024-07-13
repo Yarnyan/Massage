@@ -1,22 +1,48 @@
-import React from 'react'
-import styles from './Error.module.scss'
-import { Link } from 'react-router-dom'
-export default function Error() {
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Error.module.scss';
+
+export default function ErrorBase({ code }) {
+  const errorConfig = {
+    "404": {
+      errorMessage: "oops! КАЖЕТСЯ ЭТА СТРАНИЦА ПУСТАЯ",
+      errorDesc: "",
+      errorButton: <Link to={'/'}>На главную</Link>,
+    },
+    "403": {
+      errorMessage: "Вы были заблокированы",
+      errorDesc: "Вы можете уточнить причину, написав нашему администратору",
+      errorButton: <Link to={'/'}>Связаться</Link>,
+    },
+    "500": {
+      errorMessage: "Возникла ошибка сервера, зайдите позже.",
+      errorDesc: "",
+      errorButton: null,
+    },
+    default: {
+      errorMessage: "Неизвестная ошибка",
+      errorDesc: "Посетите главную страницу, возможно вы её найдёте",
+      errorButton: <Link to={'/'}>На главную</Link>,
+    }
+  };
+
+  const { errorMessage, errorDesc, errorButton } = errorConfig[code] || errorConfig.default;
+
   return (
     <div className={styles.error}>
       <div className={styles.overlay}></div>
       <div className={styles.body}>
         <div className={styles.errorBody}>
-          <p className={styles.firstP}>4</p>
-          <img src="/image/errorImage.png" alt="" />
-          <p className={styles.secondP}>4</p>
+          <p className={styles.firstP}>{code[0]}</p>
+          <img src="/image/errorImage.webp" alt="error image" />
+          <p className={styles.secondP}>{code[2]}</p>
         </div>
         <div className={styles.text}>
-          <p>oops! КАЖЕТСЯ ЭТА СТРАНИЦА ПУСТАЯ</p>
-          <p>Поситите главную страницу, возможно вы ее найдете</p>
-          <Link to={'/'}>На главную</Link>
+          <p>{errorMessage}</p>
+          <p>{errorDesc}</p>
+          {errorButton}
         </div>
       </div>
     </div>
-  )
+  );
 }

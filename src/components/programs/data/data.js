@@ -1,7 +1,7 @@
 export const programData = [
     {
         id: 1,
-        image: '/image/programImage.png',
+        image: '/image/programImage.webp',
         description: 'Самая популярная программа в студии баланс удовольствия и релакса.',
         type: 'Эстет',
         time: '90',
@@ -9,7 +9,7 @@ export const programData = [
     },
     {
         id: 2,
-        image: '/image/programImage2.png',
+        image: '/image/programImage2.webp',
         description: 'Для тех, кто не привык отказывать себе в полном удовольствии',
         type: 'Повелитель',
         time: '120',
@@ -17,7 +17,7 @@ export const programData = [
     },
     {
         id: 3,
-        image: '/image/programImage3.png',
+        image: '/image/programImage3.webp',
         description: 'Для тех, кто любит доставлять удовольствие девушкам.',
         type: 'Интерес',
         time: '60',
@@ -25,7 +25,7 @@ export const programData = [
     },
     {
         id: 4,
-        image: '/image/programImage4.png',
+        image: '/image/programImage4.webp',
         description: 'Без лишних слов, только дело',
         type: 'Cтандарт',
         time: '60',

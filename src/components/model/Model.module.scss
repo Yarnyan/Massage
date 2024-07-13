@@ -185,13 +185,16 @@
 
 @media screen and (max-width: 600px) {
     .squareContainer {
-        margin-top: 40px;
+        margin-top: 20px;
     }
     .pp:nth-child(5) {
         display: none;
     }
     .pp {
         margin: 0 10px 0 0;
+    }
+    .model {
+        margin-top: 20px;
     }
     .header img {
         border-radius: 50%;
@@ -207,6 +210,16 @@
     .header {
         flex-direction: column;
         align-items: center;
+    }
+    .body,
+    .testimonials {
+        margin-top: 20px;
+    }
+    .testimonialsContainer {
+        margin-top: 20px;
+    }
+    .testimonials {
+        margin-bottom: 20px;
     }
     .modelAbout {
         max-width: 100%;

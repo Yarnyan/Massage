@@ -109,17 +109,17 @@ export default function Header() {
                     >
                         <SwiperSlide>
                             <div className={styles.imgContainer}>
-                                <img src='/image/backgroundImage.png' alt="" />
+                                <img src='/image/backgroundImage.webp' alt="" />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className={styles.imgContainer}>
-                                <img src='/image/backgroundImage2.png' alt="" />
+                                <img src='/image/backgroundImage2.webp' alt="" />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className={styles.imgContainer}>
-                                <img src='/image/backgroundImage4.png' alt="" />
+                                <img src='/image/backgroundImage4.webp' alt="" />
                             </div>
                         </SwiperSlide>
                     </Swiper>

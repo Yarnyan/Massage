@@ -160,6 +160,47 @@ body {
     margin: 10px 0;
 }
 
+.containerForModelPagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1005;
+}
+
+.custom-next,
+.custom-prev {
+    background: rgba(0, 0, 0, .4);
+    opacity: .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.custom-next svg,
+.custom-prev svg{
+    width: 16px;
+    height: 16px;
+}
+
+.customContainerForArrow {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 14px;
+    position: absolute;
+    z-index: 1005;
+}
+
 @media screen and (max-width: 600px) {
     .custom-pagination-program {
         top: 500px !important;

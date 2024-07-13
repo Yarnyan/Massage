@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-index: 1005;
 
 }
 
@@ -100,9 +100,10 @@
 @media screen and (max-width: 500px) {
     .modalContent {
         width: 98%;
-        height: 97%;
-        padding: 13px 11px 0 11px;
-        max-height: 587px;
+        height: auto;
+        padding: 13px 11px 13px 11px;
+        // max-height: 98%;
+        background-color: rgba(27, 27, 27, 1);
     }
 
     .modalContent p:nth-child(1) {
@@ -134,6 +135,13 @@
         font-size: 16px;
         font-weight: 500;
         margin-top: 12px;
+    }
+
+    .modalLinkContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 }

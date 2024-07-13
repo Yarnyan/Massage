@@ -7,11 +7,12 @@ import { MenuItem } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useCreateLeadMutation } from '../../store/reducers/leads/leads.actions';
 
 const schema = yup.object().shape({
     // name: yup.string().required(),
-    phone: yup.string().required(),
-    master: yup.string().required(),
+    phone_number: yup.string().required(),
+    girl_id: yup.string().required(),
     agree: yup.bool().oneOf([true], 'Вы должны согласиться с условиями политики конфиденциальности')
 });
 
@@ -20,10 +21,16 @@ export default function Liaison() {
     const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
+    // TODO: Заявка хуево отправляется
+    const [createLead, {isLoading, isSuccess}] = useCreateLeadMutation();
 
-    const onSubmit = data => {
+    const onSubmit = async (data) => {
         setIsModalOpen(true)
         console.log(data)
+        data.display_name = "123"
+        data.girl_id = data.girl_id ? data.girl_id > 0 : null
+        data.user_agent = window.navigator.userAgent;
+        await createLead(data);
     };
 
     useEffect(() => {
@@ -42,14 +49,14 @@ export default function Liaison() {
                         <p>Запишись прямо сейчас!</p>
                         <p>Мы свяжемся с тобой в течение минуты и договоримся о встрече.</p>
                         <div>
-                            <img src="/image/reg.png" alt="" />
+                            <img src="/image/reg.webp" alt="" />
                         </div>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                         <div className={styles.inputField}>
                             <p>Имя</p>
                             <Controller
-                                name="name"
+                                name="display_name"
                                 control={control}
                                 defaultValue=""
                                 render={({ field }) => <input placeholder="Инкогнито" {...field} />}
@@ -59,28 +66,29 @@ export default function Liaison() {
                         <div className={styles.inputField}>
                             <p>Телефон</p>
                             <Controller
-                                name="phone"
+                                name="phone_number"
                                 control={control}
                                 defaultValue=""
-                                render={({ field }) => <input placeholder="+7 (999) 999-99-99" {...field} />}
+                                render={({ field }) => <input placeholder="+79008007060" {...field} />}
                             />
-                            <p className={styles.error}>{errors.phone && "Телефон обязателен"}</p>
+                            <p className={styles.error}>{errors.phone_number && "Телефон обязателен"}</p>
                         </div>
                         <div className={styles.inputField}>
                             <p>Выбор мастера</p>
                             <Controller
-                                name="master"
+                                name="girl_id"
                                 control={control}
-                                defaultValue="Милана"
+                                defaultValue={0} // Default value should be a valid option value
                                 render={({ field }) => (
                                     <Select {...field} className={styles.input}>
-                                        <MenuItem value="Милана">Милана</MenuItem>
-                                        <MenuItem value="Алиса">Алиса</MenuItem>
-                                        <MenuItem value="Милана и Алиса">Милана и Алиса</MenuItem>
+                                        <MenuItem value={0}>Не имеет значения</MenuItem>
+                                        <MenuItem value={7}>Милана</MenuItem>
+                                        <MenuItem value={2}>Алиса</MenuItem>
+                                        <MenuItem value={3}>Милана и Алиса</MenuItem>
                                     </Select>
                                 )}
                             />
-                            <p className={styles.error}>{errors.master && "Выбор мастера обязателен"}</p>
+                            <p className={styles.error}>{errors.girl_id && "Выбор мастера обязателен"}</p>
                         </div>
                         <div className={styles.checkField}>
                             <div className={styles.gg}>
