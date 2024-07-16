@@ -1,19 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { setAppState, getAppState } from '../../../helpers/appState';
 
+
 const currentUser = getAppState("current-user");
 const is_authorised = getAppState("is_authorised") ? getAppState("is_authorised") : false;
 
-
-
 const initialState = {
-    currentUser,
-    is_authorised,
+    currentUser: currentUser || null,
+    phone_number: null,
+    display_name: "Инкогнито",
+    is_authorised: is_authorised,
     is_banned: false
-}
+};
 
 export const usersSlice = createSlice({
-    name: 'usersSlice',
+    name: 'users',
     initialState,
     reducers: {
         setCurrentUser: (state, action) => {
@@ -22,11 +23,18 @@ export const usersSlice = createSlice({
             setAppState("current-user", action.payload);
             setAppState("is_authorised", true);
         },
-        ban: (state, action) => {
+        setPhoneNumber: (state, action) => {
+            state.phone_number = action.payload;
+        },
+        setDisplayName: (state, action) => {
+            state.display_name = action.payload;
+        },
+        banUser: (state) => {
             state.is_banned = true;
         }
     }
-})
+});
 
-export const { setCurrentUser, ban } = usersSlice.actions;
-export default usersSlice.reducer; 
+export const { setCurrentUser, setPhoneNumber, setDisplayName, banUser } = usersSlice.actions;
+
+export default usersSlice.reducer;

@@ -9,19 +9,21 @@ import Testimonials from '../components/Testimonials/Testimonials';
 import Footer from '../components/footer/Footer';
 import Faq from '../components/faq/Faq';
 import ScrollButton from '../components/ScrollButton/ScrollButton';
+import {useGetModelsQuery} from '../store/reducers/models/models.actions'
 
 export default function MainPage() {
+  const { error: modelError, isLoading: modelIsLoading } = useGetModelsQuery();
   return (
-    <div> 
+    <> 
         <Header />
-        <Models />
+        <Models error={modelError} isLoading={modelIsLoading} />
         <Advantages />
-        <Liaison />
+        <Liaison error={modelError} isLoading={modelIsLoading} />
         <Programs />
         <Testimonials />
         <Faq />
         <Footer />
         <ScrollButton />
-    </div>
+    </>
   )
 }

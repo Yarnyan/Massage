@@ -1,5 +1,5 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ban } from '../users/users.slice';
+import { banUser } from '../users/users.slice';
 import { getAppState } from '../../../helpers/appState';
 
 export const baseQuery = fetchBaseQuery({
@@ -16,7 +16,7 @@ export const baseQuery = fetchBaseQuery({
 export const baseQueryWithRedirect = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions);
   if (result.error && result.error.status === 403) {
-    api.dispatch(ban());
+    api.dispatch(banUser());
   };
   return result;
 };

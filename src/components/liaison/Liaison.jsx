@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Liaison.module.scss'
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
@@ -7,7 +7,10 @@ import { MenuItem } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import InputMask from 'react-input-mask';
 import { useCreateLeadMutation } from '../../store/reducers/leads/leads.actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { chooseModel } from '../../store/reducers/models/models.slice';
 
 const schema = yup.object().shape({
     // name: yup.string().required(),
@@ -16,30 +19,39 @@ const schema = yup.object().shape({
     agree: yup.bool().oneOf([true], 'Вы должны согласиться с условиями политики конфиденциальности')
 });
 
-export default function Liaison() {
+export default function Liaison({ error, isLoading }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
-    // TODO: Заявка хуево отправляется
-    const [createLead, {isLoading, isSuccess}] = useCreateLeadMutation();
+    const dispatch = useDispatch();
+    const { models, chosenModel } = useSelector((state) => state.models);
+    const [createLead, { isLoading: isLoadingLead, isError: isErrorLead, error: errorLead, isSuccess: isSuccessLead}] = useCreateLeadMutation();
 
+    const handleChange = (event) => {
+        const selectedModelId = event.target.value;
+        dispatch(chooseModel(selectedModelId));
+    };
+    console.log(chosenModel)
     const onSubmit = async (data) => {
         setIsModalOpen(true)
         console.log(data)
-        data.display_name = "123"
-        data.girl_id = data.girl_id ? data.girl_id > 0 : null
-        data.user_agent = window.navigator.userAgent;
-        await createLead(data);
-    };
-
-    useEffect(() => {
-        if (isModalOpen) {
-          document.body.classList.add('no-scroll');
-        } else {
-          document.body.classList.remove('no-scroll');
+        if (data.display_name === null || data.display_name.length <= 0) {
+            data.display_name = "Инкогнито"
         }
-      }, [isModalOpen]);
+        const girlId = parseInt(data.girl_id)
+        data.girl_id = girlId ? girlId > 0 : null
+        data.type = "GIRL"
+        console.log(data.girl_id)
+        data.user_agent = window.navigator.userAgent;
+    
+        await createLead(data);
+
+        if (isErrorLead) {
+            console.log("123", errorLead)
+        }
+
+    };
 
     return (
         <div className={styles.liaison}>
@@ -69,7 +81,7 @@ export default function Liaison() {
                                 name="phone_number"
                                 control={control}
                                 defaultValue=""
-                                render={({ field }) => <input placeholder="+79008007060" {...field} />}
+                                render={({ field }) => <InputMask mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__" {...field} />}
                             />
                             <p className={styles.error}>{errors.phone_number && "Телефон обязателен"}</p>
                         </div>
@@ -80,11 +92,22 @@ export default function Liaison() {
                                 control={control}
                                 defaultValue={0} // Default value should be a valid option value
                                 render={({ field }) => (
-                                    <Select {...field} className={styles.input}>
+                                    <Select {...field} className={styles.input} onChange={(event) => {
+                                        field.onChange(event);
+                                        handleChange(event);
+                                    }}>
                                         <MenuItem value={0}>Не имеет значения</MenuItem>
-                                        <MenuItem value={7}>Милана</MenuItem>
-                                        <MenuItem value={2}>Алиса</MenuItem>
-                                        <MenuItem value={3}>Милана и Алиса</MenuItem>
+                                        {isLoading ? (
+                                            <MenuItem disabled>Загрузка...</MenuItem>
+                                        ) : error ? (
+                                            <MenuItem disabled>Ошибка загрузки данных</MenuItem>
+                                        ) : (
+                                            models.map((model) => (
+                                                <MenuItem key={model.girl_id} value={model.girl_id}>
+                                                    {model.name}
+                                                </MenuItem>
+                                            ))
+                                        )}
                                     </Select>
                                 )}
                             />
@@ -105,12 +128,13 @@ export default function Liaison() {
                             </div>
                         </div>
                         <div className={styles.buttonField}>
-                            <button type='submit'>Отправить</button>
+                            {isLoadingLead ? (
+                                <button type='submit' disabled>Отправить</button>
+                            ) : isSuccessLead ? (<button type='submit'>Успешно отправлена!</button>) : (<button type='submit'>Отправить</button>)}
                         </div>
                     </form>
                 </div>
             </div>
-            {isModalOpen && <Entry closeModal={() => setIsModalOpen(false)} />}
         </div>
     )
 }

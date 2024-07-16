@@ -16,7 +16,6 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import RoomIcon from '@mui/icons-material/Room';
 import { Link, useNavigate } from 'react-router-dom'
 export default function Header() {
-    const navigate = useNavigate();
     const [token, setToken] = useState(localStorage.getItem('isAdult'));
     const width = window.innerWidth;
     const [menuOpen, setMenuOpen] = useState(false);
@@ -52,6 +51,11 @@ export default function Header() {
                 <a href="/">
                     <img height={70} src="/bless-1000x1000.svg" alt="bless логотип" />
                 </a>
+                <div className={styles.links}>
+                    <a href="#models">Модели</a>
+                    <a href="#advantages">О нас</a>
+                    <a href="#programs">Программы</a>
+                </div>
                 <div className={styles.info}>
                     <div className={styles.address}>
                         <>
@@ -73,30 +77,6 @@ export default function Header() {
                 </div>
             </div>
             <div className={styles.container}>
-                {/* <div className={styles.nav}>
-                    <a href="/">
-                        <img height={70} src="/bless-1000x1000.svg" alt="bless логотип" />
-                    </a>
-                    <div className={styles.info}>
-                        <div className={styles.address}>
-                            <>
-                                <p>г. Тюмень</p>
-                                <p>ул. 30 лет победы</p>
-                            </>
-                        </div>
-                        <div className={styles.number}>
-                            <>
-                                <p>Запись по телефону</p>
-                                <p>+ 7 900 900 90 90</p>
-                            </>
-                        </div>
-                        {width < 1200 && (
-                            <div className={styles.menuIcon} onClick={toggleMenu}>
-                                {menuOpen ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
-                            </div>
-                        )}
-                    </div>
-                </div> */}
                 <div className={styles.slider}>
                     <Swiper
                         modules={[Pagination, Autoplay]}
@@ -111,31 +91,42 @@ export default function Header() {
                             <div className={styles.imgContainer}>
                                 <img src='/image/backgroundImage.webp' alt="" />
                             </div>
+                            <div className={styles.text}>
+                                <p>УВИДИМСЯ <span>СЕГОДНЯ</span>?</p>
+                                <p>Максимальное соприкосновение двух тел. Трепет, драйв, страсть и нежность</p>
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className={styles.imgContainer}>
                                 <img src='/image/backgroundImage2.webp' alt="" />
+                            </div>
+                            <div className={styles.text}>
+                                <p>УВИДИМСЯ <span>СЕГОДНЯ</span>?</p>
+                                <p>Максимальное соприкосновение двух тел. Трепет, драйв, страсть и нежность</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className={styles.imgContainer}>
                                 <img src='/image/backgroundImage4.webp' alt="" />
                             </div>
+                            <div className={styles.text}>
+                                <p>НЕ УВИДИМСЯ <span>СЕГОДНЯ</span>?</p>
+                                <p>Максимальное соприкосновение двух тел. Трепет, драйв, страсть и нежность</p>
+                            </div>
                         </SwiperSlide>
                     </Swiper>
                 </div>
             </div>
-            <div className={styles.text}>
+            {/* <div className={styles.text}>
                 <p>УВИДИМСЯ <span>СЕГОДНЯ</span>?</p>
                 <p>Максимальное соприкосновение двух тел. Трепет, драйв, страсть и нежность</p>
-            </div>
+            </div> */}
             <div className={`${styles.buttons}`}>
-                <div className={styles.links}>
+                {/* <div className={styles.links}>
                     <a href="#models">Модели</a>
                     <a href="#advantages">О нас</a>
                     <a href="#programs">Программы</a>
-                    {/* <a href="#liaison">Запись</a> */}
-                </div>
+                </div> */}
                 <div className={styles.record}>
                     <a href="#liaison">
                         Записаться

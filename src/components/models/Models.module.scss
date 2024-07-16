@@ -7,10 +7,11 @@
     max-width: 1200px;
     margin: 0 auto;
     height: 100%;
-    padding: 150px 0 50px 0;
+    padding: 75px 0 50px 0;
+    // padding: 150px 0 50px 0;
 }
 
-.modelsSubtile {
+.modelsSubtitle {
     color: #C30000;
     font-family: 'Jost', sans-serif;
     font-size: 24px;
@@ -67,7 +68,7 @@
 
 @media screen and (max-width: 772px) {
     .container {
-        margin: 75px 0 50px 0;
+        margin: 40px 0 20px 0;
         padding: 0 0 50px 0;
     }
     .selection p:nth-child(2) {

@@ -1,0 +1,27 @@
+.banners {
+    width: 100%;
+    border-top: 1px solid #393939;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 50px 0 50px 0;
+}
+
+.bannersContainer {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .bannersContainer {
+        padding: 0 0 0 10px;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-x: overlay;
+        scrollbar-width: thin;
+        padding-bottom: 10px;
+    }
+}

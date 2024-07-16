@@ -12,7 +12,8 @@ export const advantageData = [
     {
         id: 3,
         title: 'Большой диван или массажный стол по Вашему желанию',
-        icon: '/image/svg3.svg'
+        icon: '/image/svg3.svg',
+        dark: true
     },
     {
         id: 4,

@@ -33,6 +33,14 @@
     margin-top: 50px;
 }
 
+.ss {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: gray;
+    margin-top: 50px;
+}
+
 //card
 
 .card {
@@ -51,6 +59,32 @@
     color: #FFFFFF;
 }
 
+.showMoreButton {
+    z-index: 2;
+    padding: 10px 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #C30000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    // margin-top: -50px;
+}
+
+.showMoreButton:hover {
+    background-color: #a30000;
+}
+
+.containerBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 @media screen and (max-width: 1220px) {
     .advantages {
         padding: 0 10px;
@@ -59,9 +93,10 @@
 
 @media screen and (max-width: 772px) {
     .container {
-        margin: 75px 0 50px 0;
+        margin: 40px 0 20px 0;
         padding: 0 0 50px 0;
     }
+
     .cards {
         justify-content: center;
     }

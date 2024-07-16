@@ -63,7 +63,7 @@ body {
 
 .swiper-pagination {
     top: 270px !important;
-    left: 340px !important;
+    left: 260px !important;
     display: flex;
     flex-direction: column;
 }
@@ -199,6 +199,7 @@ body {
     padding: 0 14px;
     position: absolute;
     z-index: 1005;
+    top: 50%;
 }
 
 @media screen and (max-width: 600px) {

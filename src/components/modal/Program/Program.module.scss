@@ -21,14 +21,31 @@
     z-index: 1;
 }
 
+.modalHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modalHeaderBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif
+}
+
 .modalContent {
-    background-color: #fff;
+    background-color: rgba(27, 27, 27, 1);
     padding: 20px;
     border-radius: 8px;
     width: 1000px;
-    height: 880px;
+    height: auto;
     z-index: 2;
-    padding: 64px 40px 0 40px;
+    padding: 64px 40px 60px 40px;
     // border-radius: 70px;
 }
 
@@ -92,6 +109,12 @@
     font-size: 20px;
     font-family: 'Jost', sans-serif;
 }
+.modalLinkContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .modalContent a:hover {
     background-color: darken(rgba(173, 0, 10, 1), 10%);
@@ -114,19 +137,19 @@
     }
 
     .modalContent p:nth-child(2) {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 400;
         margin-top: 4px;
     }
 
     .modalContent p:nth-child(3) {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 400;
         margin-top: 4px;
     }
 
     .modalContent p:nth-child(4) {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 400;
         margin-top: 4px;
     }

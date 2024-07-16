@@ -1,0 +1,21 @@
+.banner {
+    border-radius: 16px;
+    width: 226px;
+    height: 225px;
+}
+
+.banner:not(:first-child) {
+    margin: 0 10px;
+}
+
+
+.banner a {
+    height: 100%;
+    display: inline-block;
+}
+
+.banner img {
+    width: 225px;
+    height: 223px;
+    border-radius: 16px;
+}

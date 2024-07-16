@@ -38,7 +38,7 @@ export default function HeaderAppointment() {
     };
 
     return (
-        <header className={styles.header} id='header' style={{ height: '90px', marginTop: '0px', marginBottom: '0px' }}>
+        <header className={styles.header} id='header' style={{ height: '90px', marginTop: '0px', marginBottom: '0px', maxWidth: '1200px' }}>
             <div className={styles.nav}>
                 <a href="/">
                     <img height={70} src="/bless-1000x1000.svg" alt="bless логотип" />

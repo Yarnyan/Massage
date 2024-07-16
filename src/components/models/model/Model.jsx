@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-export default function Model() {
+export default function Model({model}) {
     const pagination = {
         el: ".containerForModelPagination",
         clickable: true,
@@ -39,8 +39,7 @@ export default function Model() {
                     </SwiperSlide>
                     <div className="containerForModelPagination">
                     </div>
-                </Swiper>
-                <div className="customContainerForArrow">
+                    <div className="customContainerForArrow">
                     <div className="custom-prev">
                         <ArrowBackIosNewIcon />
                     </div>
@@ -48,10 +47,11 @@ export default function Model() {
                         <ArrowForwardIosIcon />
                     </div>
                 </div>
+                </Swiper>
             </div>
             <div className={styles.modelInfo}>
-                <p>Cимона</p>
-                <p>@simona-ar</p>
+                <p>{model?.name}</p>
+                <p>@{model?.slug}</p>
                 {/* <img src="https://studia83.ru/upload/resize_cache/iblock/65e/360_360_2/x65e2bf4a40424fbb97bef364d73b88b2.JPG.pagespeed.ic.N_yXENGOpc.webp" alt="Model" /> */}
             </div>
             <div className={styles.modelAbout}>
@@ -69,8 +69,8 @@ export default function Model() {
                 </div>
             </div>
             <div className={styles.buttons}>
-                <a href="#liaison">Записаться</a>
-                <Link to={'/models/simona'}>Подробнее</Link>
+                <a href="#liaison">Заказать</a>
+                <Link to={`/models/${model?.slug}`}>Подробнее</Link>
             </div>
         </div>
     );

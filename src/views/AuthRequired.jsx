@@ -21,11 +21,11 @@ const IsNotBanned = ({ children }) => {
   if (isLoading) {
     return <Loader />;
   }
+  if (!isSuccess) {
+    return <ErrorPage code={500} />;
+  }
   if (is_banned) {
     return <ErrorPage code={403} />;
-  }
-  if (isSuccess) {
-    return <ErrorPage code={500} />;
   }
 
   return children;
