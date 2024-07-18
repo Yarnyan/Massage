@@ -16,7 +16,7 @@ export default function MainPage() {
   return (
     <> 
         <Header />
-        <Models error={modelError} isLoading={modelIsLoading} />
+        <Models error={modelError} isLoading={modelIsLoading} text={true}/>
         <Advantages />
         <Liaison error={modelError} isLoading={modelIsLoading} />
         <Programs />

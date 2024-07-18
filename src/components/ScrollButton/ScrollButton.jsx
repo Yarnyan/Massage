@@ -27,7 +27,7 @@ const ScrollButton = () => {
         </a>
       )}
       <Link to={"https://t.me/asdasdasd"} target='_blank' className="fixed-button">
-        <TelegramIcon fontSize='medium'/>
+        <TelegramIcon fontSize='medium' />
       </Link>
     </div>
   );

@@ -1,8 +1,9 @@
 .model {
     flex: 1;
-    margin-top: 35px;
+    margin-top: 0;
     width: 100%;
 }
+
 .record a {
     border-radius: 30px;
     padding: 10px 39px 10px 39px;
@@ -184,6 +185,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .model {
+        margin-top: 0;
+    }
     .squareContainer {
         margin-top: 20px;
     }

@@ -3,13 +3,12 @@ import Avatar from '@mui/material/Avatar';
 import styles from './Testimonial.module.scss'
 
 export default function Testimonial({ review }) {
-  console.log(review)
   const maxDescSize = 256;
-  let description = review.description
-    ? (review.description.length <= maxDescSize
-      ? review.description
-      : review.description.slice(0, maxDescSize) + "...  ")
-    : "";
+  // let description = review.description
+  //   ? (review.description.length <= maxDescSize
+  //     ? review.description
+  //     : review.description.slice(0, maxDescSize) + "...  ")
+  //   : "";
   return (
     <div className={styles.testimonial}>
       <div className={styles.testimonialHeader}>

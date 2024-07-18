@@ -5,22 +5,22 @@ export default function Banners() {
     const data = [
         {
             id: 1,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH5eLf0LT9XIjXGQRWYIil8UTD6GMKeADfdA&s',
+            img: 'https://d3br4o8fwubvai.cloudfront.net/uploads/banner/image/4/thumb_w450_banner-image-4-1708622731.webp',
         },
         {
-            id: 1,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH5eLf0LT9XIjXGQRWYIil8UTD6GMKeADfdA&s',
+            id: 2,
+            img: 'https://d3br4o8fwubvai.cloudfront.net/uploads/banner/image/30/thumb_w450_banner-image-30-1708622731.webp',
         },
         {
-            id: 1,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH5eLf0LT9XIjXGQRWYIil8UTD6GMKeADfdA&s',
+            id: 3,
+            img: 'https://d3br4o8fwubvai.cloudfront.net/uploads/banner/image/3/thumb_w450_banner-image-3-1708622731.webp',
         },
         {
-            id: 1,
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH5eLf0LT9XIjXGQRWYIil8UTD6GMKeADfdA&s',
+            id: 4,
+            img: 'https://d3br4o8fwubvai.cloudfront.net/uploads/banner/image/25/thumb_w450_banner-image-25-1708622731.webp',
         },
         {
-            id: 1,
+            id: 5,
             img: 'https://d3br4o8fwubvai.cloudfront.net/uploads/banner/image/7/thumb_w450_banner-image-7-1708622731.webp',
         },
     ]
@@ -30,7 +30,7 @@ export default function Banners() {
             <div className={styles.bannersContainer}>
                 {data.map((item) => {
                     return (
-                        <Banner img={item.img} />
+                        <Banner img={item.img} key={item.id} />
                     )
                 })}
             </div>

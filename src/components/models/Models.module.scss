@@ -1,13 +1,13 @@
 .models {
     width: 100%;
-    border-top: 1px solid #393939;
+    // border-top: 1px solid #393939;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     height: 100%;
-    padding: 75px 0 50px 0;
+    padding: 0px 0 50px 0;
     // padding: 150px 0 50px 0;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .selection {
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 
 .selection p {
@@ -46,16 +46,137 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.filter {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+}
+
+.filter p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.filter svg {
+    cursor: pointer;
+}
+
+
+.filterMenu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 420px;
+    z-index: 1005;
+    background-color: darken(rgb(27, 27, 27), 10%);
+    transform: translateX(100%);
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.filterMenu.open {
+    animation-name: slideIn;
+}
+
+.filterMenu.close {
+    animation-name: slideOut;
+}
+
+.filterMenuLinks {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.filterMenuLink:not(:first-child) {
+    margin-top: 20px;
+}
+
+.filterMenuLink p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: #EBEBEB;
+    text-align: center;
+}
+
+.filterBtn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.filterBtn button {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #EBEBEB;
+    background-color: rgba(255, 255, 255, .075);
+    border: none;
+    margin: 5px 5px;
+    cursor: pointer;
+    padding: 7.5px 5px;
+    border-radius: 15px;
+    width: 150px;
+    border: 1px solid rgba(255, 255, 255, .075);
+    transition: .3s border;
+}
+
+.filterBtn button:hover {
+    border: 1px solid rgb(214, 45, 45);
+}
+
+.closeBtn {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+}
+
+.closeBtn svg {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1220px) {
+    .filterMenu {
+        width: 100%;
+    }
+    .filterBtn {
+        width: 100%;
+    }
     .models {
         padding: 0 10px;
+        border-top: none;
     }
 
     .pillar2 {
         margin-left: 10px;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
     }
 }
 
@@ -68,8 +189,11 @@
 
 @media screen and (max-width: 772px) {
     .container {
-        margin: 40px 0 20px 0;
+        margin: 0px 0 20px 0;
         padding: 0 0 50px 0;
+    }
+    .modelsContainer {
+        margin-top: 10px;
     }
     .selection p:nth-child(2) {
         width: 100%;

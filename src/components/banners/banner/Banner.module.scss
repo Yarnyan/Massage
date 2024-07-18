@@ -1,7 +1,7 @@
 .banner {
     border-radius: 16px;
-    width: 226px;
-    height: 225px;
+    width: 225px;
+    height: 255px;
 }
 
 .banner:not(:first-child) {
@@ -15,7 +15,19 @@
 }
 
 .banner img {
-    width: 225px;
-    height: 223px;
+    width: 220px;
+    height: 270px;
     border-radius: 16px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .banner {
+        width: 150px;
+        height: 200px;
+    }
+    .banner img {
+        width: 150px;
+        height: 200px;
+    }
 }

@@ -10,10 +10,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<IsNotBanned><MainPage /></IsNotBanned>} />
+        <Route path="/new" element={<IsNotBanned><MainPage /></IsNotBanned>} />
         <Route path="/vacancy" element={<IsNotBanned><AppointmentPage /></IsNotBanned>} />
         <Route path="/models/:model" element={<IsNotBanned><ModelPage /></IsNotBanned>} />
-        <Route path="/new" element={<IsNotBanned><GirlsPage /></IsNotBanned>} />
+        <Route path="/" element={<IsNotBanned><GirlsPage /></IsNotBanned>} />
         <Route path="*" element={<ErrorPage code={404} />} />
       </Routes>
     </BrowserRouter>

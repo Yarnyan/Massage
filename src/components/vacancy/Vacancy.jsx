@@ -52,22 +52,6 @@ export default function Vacancy() {
                             />
                             <p className={styles.error}>{errors.phone && "Телефон обязателен"}</p>
                         </div>
-                        {/* <div className={styles.inputField}>
-                            <p>Выбор мастера</p>
-                            <Controller
-                                name="master"
-                                control={control}
-                                defaultValue="Милана"
-                                render={({ field }) => (
-                                    <Select {...field} className={styles.input}>
-                                        <MenuItem value="Милана">Милана</MenuItem>
-                                        <MenuItem value="Алиса">Алиса</MenuItem>
-                                        <MenuItem value="Милана и Алиса">Милана и Алиса</MenuItem>
-                                    </Select>
-                                )}
-                            />
-                            <p className={styles.error}>{errors.master && "Выбор мастера обязателен"}</p>
-                        </div> */}
                         <div className={styles.checkField}>
                             <div className={styles.gg}>
                                 <Controller

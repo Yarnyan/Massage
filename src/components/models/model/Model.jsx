@@ -70,7 +70,7 @@ export default function Model({model}) {
             </div>
             <div className={styles.buttons}>
                 <a href="#liaison">Заказать</a>
-                <Link to={`/models/${model?.slug}`}>Подробнее</Link>
+                <Link to={`/models/simona`}>Подробнее</Link>
             </div>
         </div>
     );

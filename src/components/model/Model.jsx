@@ -5,6 +5,7 @@ import 'react-image-lightbox/style.css';
 import Testimonial from '../Testimonials/Testimonial/Testimonial';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import Breadcrumb from '../breadcrumbs/Breadcrumb';
 import 'swiper/css';
 import 'swiper/css/pagination';
 export default function Model() {

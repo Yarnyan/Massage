@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 10px auto;
+}
+
+.container a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 0 10px;
+    }
+}

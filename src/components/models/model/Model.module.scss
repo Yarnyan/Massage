@@ -1,9 +1,10 @@
 .model {
     border-radius: 15px;
     background-color: #282828;
-    margin: 20px 40px 20px 0;
+    margin: 20px 0 20px 0;
     max-width: 360px;
     position: relative;
+    justify-content: center;
 }
 
 .model img {
@@ -18,16 +19,16 @@
     align-items: center;
 }
 
-.modelInfo p{
+.modelInfo p {
     font-family: 'Jost', sans-serif;
 }
 
-.modelInfo p:nth-child(1){
+.modelInfo p:nth-child(1) {
     font-weight: 500;
     font-size: 20px;
 }
 
-.modelInfo p:nth-child(2){
+.modelInfo p:nth-child(2) {
     font-weight: 300;
     font-size: 18px;
     color: lighten(#282828, 50%)
@@ -47,16 +48,16 @@
     align-items: center;
 }
 
-.pp p{
+.pp p {
     font-family: 'Jost', sans-serif;
 }
 
-.pp p:nth-child(2){
+.pp p:nth-child(2) {
     font-weight: 500;
     font-size: 16px;
 }
 
-.pp p:nth-child(1){
+.pp p:nth-child(1) {
     font-weight: 300;
     font-size: 18px;
     color: lighten(#282828, 50%)
@@ -115,14 +116,17 @@
     .swiperSlide {
         max-width: 100%;
     }
+
     .modelsContainer {
         justify-content: center;
         align-items: center;
     }
+
     .model {
         margin: 20px 0 20px 0;
         max-width: 100%;
     }
+
     .model img {
         width: 100%;
     }

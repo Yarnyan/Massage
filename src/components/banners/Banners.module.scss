@@ -1,6 +1,5 @@
 .banners {
     width: 100%;
-    border-top: 1px solid #393939;
 }
 
 .container {
@@ -16,6 +15,10 @@
 }
 
 @media screen and (max-width: 600px) {
+    .banners {
+        width: 100%;
+        border-top: none;
+    }
     .bannersContainer {
         padding: 0 0 0 10px;
         max-width: 100%;
@@ -23,5 +26,11 @@
         overflow-x: overlay;
         scrollbar-width: thin;
         padding-bottom: 10px;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+        padding: 25px 0 25px 0;
     }
 }
