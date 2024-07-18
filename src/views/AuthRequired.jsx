@@ -18,15 +18,15 @@ const IsNotBanned = ({ children }) => {
     }
   }, [isSuccess, data, dispatch]);
 
-  if (!isLoading) {
-    return <Loader />;
-  }
-  if (isSuccess) {
-    return <ErrorPage code={500} />;
-  }
-  if (is_banned) {
-    return <ErrorPage code={403} />;
-  }
+  // if (!isLoading) {
+  //   return <Loader />;
+  // }
+  // if (!isSuccess) {
+  //   return <ErrorPage code={500} />;
+  // }
+  // if (!is_banned) {
+  //   return <ErrorPage code={403} />;
+  // }
 
   return children;
 };
